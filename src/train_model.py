@@ -8,7 +8,7 @@ from utils import load_data, save_data, load_model, save_model, get_file_path
 
 
 
-def load_dataset(filepath):
+def load_and_fill_data(filepath):
     """Load dataset from CSV file and handle NaN values."""
     df = pd.read_csv(filepath)
 
@@ -23,6 +23,7 @@ def load_dataset(filepath):
         df[col].fillna(df[col].mode()[0], inplace=True)
 
     return df
+
 
 
 def train_decision_tree(X_train, y_train):
@@ -58,13 +59,13 @@ def save_model(model, filename):
 
 def main():
     # Load training and testing datasets
-    X_train = load_dataset(
+    X_train = load_and_fill_data(
         r"C:\Users\Dj_ka\Documents\Decision trees\dataset\processed\X_train.csv")
-    y_train = load_dataset(
+    y_train = load_and_fill_data(
         r"C:\Users\Dj_ka\Documents\Decision trees\dataset\processed\y_train.csv")
-    X_test = load_dataset(
+    X_test = load_and_fill_data(
         r"C:\Users\Dj_ka\Documents\Decision trees\dataset\processed\X_test.csv")
-    y_test = load_dataset(
+    y_test = load_and_fill_data(
         r"C:\Users\Dj_ka\Documents\Decision trees\dataset\processed\y_test.csv")
 
     # Train the model
