@@ -1,0 +1,32 @@
+CRF,Original variable,SDTM Domain,SDTM variable,Data Type,mapping instruction
+Adverse Event,aesev,AE,AETOXGR,Char,"derived - copy the formatted value. 
+1=""MILD""
+2=""MODERATE""
+3=""SEVERE""
+4=""POTENTIALLY LIFE THREATENING""
+5=""FATAL"""
+Adverse Event,aeser,AE,AESER,Char,"derived - copy the formatted value. 
+0=""N""
+1=""Y"""
+Adverse Event,aedis,AE,AEACN,Char,"derived, 1=""DRUG WITHDRAWN"""
+Adverse Event,aerel,AE,AEREL,Char,"derived - copy the formatted value. 
+0=""NOT RELATED""
+1=""UNLIKELY""
+2=""POSSIBLE""
+3=""PROBABLY""
+4=""DEFINITELY"""
+Adverse Event,aeout,AE,AEOUT,Char,"derived, 
+1=""RECOVERED/RESOLVED""
+2=""RECOVERED/RESOLVED WITH SEQUELAE""
+3,6=""RECOVERING/RESOLVING"" or ""NOT RECOVERED/NOT RESOLVED""
+4,5=""FATAL"""
+Adverse Event,aesaecod,AE,AESDTH,Char,"derived, 1=""Y""; 2,3,4,5=""N"""
+Adverse Event,aesaecod,AE,AESLIFE,Char,"derived, 2=""Y""; 1,3,4,5=""N"""
+Adverse Event,aesaecod,AE,AESHOSP,Char,"derived, 4=""Y""; 1,2,3,5=""N"""
+Adverse Event,aesaecod,AE,AESDISAB,Char,"derived, 3=""Y""; 1,2,4,5=""N"""
+Adverse Event,aesaecod,AE,AESCONG,Char,"derived, 5=""Y""; 1,2,3,4=""N"""
+Adverse Event,aemed,AE,AECONTRT,Char,"AECONTRT=AEMED with formatted value
+0=""N"", 1=""Y"""
+Adverse Event,aestdat,AE,AESTDTC,Char,Concatenated and Transformed into ISO8601 format
+Adverse Event,aeendat,AE,AEENDTC,Char,Concatenated and Transformed into ISO8601 format
+Adverse Event,aeongo,AE,AEENRF,Char,"derived, 1=""ONGOING"""

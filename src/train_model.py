@@ -59,13 +59,13 @@ def save_model(model, filename):
 def main():
     # Load training and testing datasets
     X_train = load_dataset(
-        r"C:\Users\Dj_ka\Documents\Mapping\Decision trees\dataset\processed\X_train.csv")
+        r"C:\Users\Dj_ka\Documents\Decision trees\dataset\processed\X_train.csv")
     y_train = load_dataset(
-        r"C:\Users\Dj_ka\Documents\Mapping\Decision trees\dataset\processed\y_train.csv")
+        r"C:\Users\Dj_ka\Documents\Decision trees\dataset\processed\y_train.csv")
     X_test = load_dataset(
-        r"C:\Users\Dj_ka\Documents\Mapping\Decision trees\dataset\processed\X_test.csv")
+        r"C:\Users\Dj_ka\Documents\Decision trees\dataset\processed\X_test.csv")
     y_test = load_dataset(
-        r"C:\Users\Dj_ka\Documents\Mapping\Decision trees\dataset\processed\y_test.csv")
+        r"C:\Users\Dj_ka\Documents\Decision trees\dataset\processed\y_test.csv")
 
     # Train the model
     model = train_decision_tree(X_train, y_train)
@@ -74,7 +74,7 @@ def main():
     evaluate_model(model, X_test, y_test)
 
     # Save the model
-    save_model(model, "decision_tree_model.pkl")
+    save_model(model, "models/decision_tree_model.pkl")
 
 
 if __name__ == "__main__":
