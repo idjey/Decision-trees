@@ -75,7 +75,7 @@ def main():
     evaluate_model(model, X_test, y_test)
 
     # Save the model
-    save_model(model, "models/decision_tree_model.pkl")
+    save_model(model, r"C:\Users\Dj_ka\Documents\Decision trees\models\decision_tree_model.pkl")
 
 
 if __name__ == "__main__":

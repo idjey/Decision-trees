@@ -25,15 +25,17 @@ def map_sdtm_variables(input_file_path, output_file_path, model_path=r'C:\Users\
     model = joblib.load(model_path)
 
     # List of features used in the trained model
-    trained_features = model.feature_importances_
+    trained_features = [
+        feature for feature in model.feature_importances_ if feature > 0]
 
     # Prepare data for prediction: Ensure it has the same columns as the training features
     prediction_data = data.copy()
 
-    for feature in trained_features:
-        if feature not in prediction_data.columns:
-            # Adding missing columns with default value 0
-            prediction_data[feature] = 0
+    # Encode the data
+    prediction_data = encode_data(prediction_data)
+
+    # Ensure prediction data has the same columns as the training features
+    prediction_data = add_missing_columns(prediction_data, trained_features)
 
     # Keeping only the columns used during training
     prediction_data = prediction_data[trained_features]
@@ -48,6 +50,7 @@ def map_sdtm_variables(input_file_path, output_file_path, model_path=r'C:\Users\
     data.to_csv(output_file_path, index=False)
 
     print(f"Mapping complete! Results saved to {output_file_path}")
+
 
 if __name__ == "__main__":
     # Paths for input and output can be modified as needed

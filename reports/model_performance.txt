@@ -14,12 +14,12 @@
      AESLIFE       0.00      0.00      0.00         0
       AESPID       0.00      0.00      0.00         1
      AESTDTC       0.00      0.00      0.00         0
+     AETOXGR       0.00      0.00      0.00         0
          AGE       0.00      0.00      0.00         1
         AGEU       0.00      0.00      0.00         0
      CMDOSEU       0.00      0.00      0.00         1
     CMDOSFRQ       0.00      0.00      0.00         0
      CMENDTC       0.00      0.00      0.00         0
-      CMENRF       0.00      0.00      0.00         0
       CMINDC       0.00      0.00      0.00         0
      CMROUTE       0.00      0.00      0.00         2
        CMSEQ       0.00      0.00      0.00         1
@@ -27,7 +27,8 @@
      CMSTDTC       0.00      0.00      0.00         1
        CMTRT       0.00      0.00      0.00         1
        COVAL       0.00      0.00      0.00         0
-       IDVAR       0.33      1.00      0.50         1
+      ETHNIC       0.00      0.00      0.00         0
+       IDVAR       1.00      1.00      1.00         1
     IDVARVAL       1.00      1.00      1.00         2
        IECAT       0.00      0.00      0.00         1
      IEORRES       0.60      1.00      0.75         6
@@ -44,8 +45,8 @@
     PEREASND       1.00      1.00      1.00         5
       PESTAT       1.00      1.00      1.00         4
     PESTRESC       1.00      1.00      1.00         2
-      PETEST       0.25      0.33      0.29         3
-    PETESTCD       0.00      0.00      0.00         3
+      PETEST       0.00      0.00      0.00         3
+    PETESTCD       0.33      0.33      0.33         3
       QLABEL       1.00      1.00      1.00         3
         QNAM       1.00      1.00      1.00         4
         QVAL       0.75      1.00      0.86         3
@@ -56,17 +57,17 @@
      USUBJID       1.00      1.00      1.00         3
        VSDTC       1.00      1.00      1.00         1
      VSORRES       0.33      0.50      0.40         4
-    VSORRESU       0.33      0.33      0.33         3
+    VSORRESU       0.20      0.33      0.25         3
        VSPOS       1.00      1.00      1.00         1
     VSREASND       1.00      1.00      1.00         1
       VSSTAT       1.00      1.00      1.00         1
     VSSTRESC       0.00      0.00      0.00         4
     VSSTRESN       1.00      1.00      1.00         5
     VSSTRESU       0.00      0.00      0.00         4
-      VSTEST       0.50      0.75      0.60         4
+      VSTEST       0.75      0.75      0.75         4
     VSTESTCD       0.80      0.80      0.80         5
          nan       0.00      0.00      0.00         4
 
     accuracy                           0.64       168
-   macro avg       0.38      0.42      0.39       168
-weighted avg       0.61      0.64      0.62       168
+   macro avg       0.39      0.41      0.40       168
+weighted avg       0.62      0.64      0.62       168
