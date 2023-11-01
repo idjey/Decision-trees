@@ -11,7 +11,9 @@ def add_missing_columns(df, columns):
     return df
 
 
-def map_sdtm_variables(input_file_path, output_file_path, model_path=r'C:\Users\Dj_ka\Documents\Decision trees\models\decision_tree_model.pkl'):
+def map_sdtm_variables(input_file_path, output_file_path, 
+                       model_path=r'C:\Users\Dj_ka\Documents\Decision trees\models\decision_tree_model.pkl',
+                       columns_path=r'C:\Users\Dj_ka\Documents\Decision trees\models\trained_columns.pkl'):
     """
     Function to map original variables to SDTM variables.
     """
@@ -24,9 +26,8 @@ def map_sdtm_variables(input_file_path, output_file_path, model_path=r'C:\Users\
     # Load the trained Decision Tree model
     model = joblib.load(model_path)
 
-    # List of features used in the trained model
-    trained_features = [
-        feature for feature in model.feature_importances_ if feature > 0]
+    # Load the columns used during training
+    trained_features = joblib.load(columns_path)
 
     # Prepare data for prediction: Ensure it has the same columns as the training features
     prediction_data = data.copy()
