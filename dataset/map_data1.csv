@@ -1,0 +1,810 @@
+crf	original_variable	sdtm_domain	sdtm_variable	data_type	mapping_instruction
+Adverse Event	aespid	AE	AESPID	Char	direct copy
+Adverse Event	aeterm	AE	AETERM	Char	direct copy
+Adverse Event	aepimmc	AE	AECAT	Char	derived AECAT="PIMMC" when AEPIMMC=1
+Adverse Event	aepir	AE	AEPRESP	Char	derived AEPRESP="Y" when AEPIR=1; AEPRESP="N" when AEPIR=0
+Adverse Event	aesev	AE	AETOXGR	Char	"derived - copy the formatted value. 
+1=""MILD""
+2=""MODERATE""
+3=""SEVERE""
+4=""POTENTIALLY LIFE THREATENING""
+5=""FATAL"""
+Adverse Event	aeser	AE	AESER	Char	"derived - copy the formatted value. 
+0=""N""
+1=""Y"""
+Adverse Event	aedis	AE	AEACN	Char	derived, 1="DRUG WITHDRAWN"
+Adverse Event	aerel	AE	AEREL	Char	"derived - copy the formatted value. 
+0=""NOT RELATED""
+1=""UNLIKELY""
+2=""POSSIBLE""
+3=""PROBABLY""
+4=""DEFINITELY"""
+Adverse Event	aeout	AE	AEOUT	Char	"derived, 
+1=""RECOVERED/RESOLVED""
+2=""RECOVERED/RESOLVED WITH SEQUELAE""
+3,6=""RECOVERING/RESOLVING"" or ""NOT RECOVERED/NOT RESOLVED""
+4,5=""FATAL"""
+Adverse Event	aesaecod	AE	AESDTH	Char	derived, 1="Y"; 2,3,4,5="N"
+Adverse Event	aesaecod	AE	AESLIFE	Char	derived, 2="Y"; 1,3,4,5="N"
+Adverse Event	aesaecod	AE	AESHOSP	Char	derived, 4="Y"; 1,2,3,5="N"
+Adverse Event	aesaecod	AE	AESDISAB	Char	derived, 3="Y"; 1,2,4,5="N"
+Adverse Event	aesaecod	AE	AESCONG	Char	derived, 5="Y"; 1,2,3,4="N"
+Adverse Event	aemed	AE	AECONTRT	Char	"AECONTRT=AEMED with formatted value
+0=""N"", 1=""Y"""
+Adverse Event	aestdat	AE	AESTDTC	Char	Concatenated and Transformed into ISO8601 format
+Adverse Event	aeendat	AE	AEENDTC	Char	Concatenated and Transformed into ISO8601 format
+Adverse Event	aeongo	AE	AEENRF	Char	derived, 1="ONGOING"
+Adverse Event	aemaae, aerel	SUPPAE	QNAM	Char	If MAAE=Yes, QNAM="MAAE"; If relationship to study vaccine=Not related or Unlikely, QNAM="ALTETIO"
+Adverse Event	aemaae	SUPPAE	QLABEL	Char	QLABEL="Type of MAAE visit" when QNAM="MAAE" and QLABEL="If Not Related, Alternate Etiology"
+Adverse Event	aemaaevisit	SUPPAE	QVAL	Char	For MAAE, map the formatted value of aemaaevisit
+Adverse Event	aemaaevisitsp	SUPPAE	QVAL	Char	For MAAE, directly copy aemaaevisitsp
+Adverse Event	aeetiology	SUPPAE	QVAL	Char	For ALTETIO, directly copy the value of aeetiology
+Adverse Event	aesum	CO	COVAL	Char	COVAL=AESUM; The text of the comment. Text over 200 characters can be added to additional columns COVAL1-COVALn
+Adverse Event	aevisdat	CO	CODTC	Char	Concatenated and Transformed into ISO8601 format
+Adverse Event	aesum	co	COVAL	Char	COVAL=AESUM; The text of the comment. Text over 200 characters can be added to additional columns COVALICOVALn
+Adverse Event	aevisdat	co	CODTC	Char	Concatenated and Transformed into IS08601 format
+Concomitant Medication	cmaeno	CM	CMAENO	Char	Direct copy
+Concomitant Medication	cmspid	CM	CMSPID	Char	Direct copy
+Concomitant Medication	cmtrt	CM	CMTRT	Char	Direct copy
+Concomitant Medication	cmindc	CM	CMINDC	Char	Direct copy
+Concomitant Medication	cmdose	CM	CMDOSE	Char	Direct copy
+Concomitant Medication	cmdosu	CM	CMDOSEU	Char	"derived - copy the formatted value:
+1=""mg""
+2=""ug""
+3=""g""
+4=""IU""
+5=""mL""
+6=""mg/kg""
+7=""mg/m2""
+8=""Tbsp""
+9=""Tsp"""
+Concomitant Medication	cmdosuoth	CM	CMDOSEU	Char	derived - copy the other specify field: 99=cmdosuoth
+Concomitant Medication	cmdosfrq	CM	CMDOSFRQ	Char	"derived - copy the formatted value:
+1=""QD""
+2=""BID""
+3=""TID""
+4=""QID""
+5=""PRN""
+6=""ONCE""
+7=""1 TIME PER WEEK""
+8=""QOD""
+9=""ONCE IMMEDIATELY"""
+Concomitant Medication	cmdosfrqoth	CM	CMDOSFRQ	Char	derived - copy the other specify field: 99=cmdosfrqoth
+Concomitant Medication	cmroute	CM	CMROUTE	Char	"derived - copy the formatted value:
+1=""ORAL""
+2=""INTRAMUSCULAR""
+3=""INTRAVENOUS""
+4=""NASAL""
+5=""TOPICAL""
+6=""RECTAL""
+7=""RESPIRATORY (INHALATION)""
+8=""SUBCUTANEOUS""
+9=""OPHTHALMIC""
+10=""AURICULAR (OTIC)""
+11=""SUBLINGUAL""
+12=""PARENTERAL""
+97=""UNKNOWN""
+98=""N/A"""
+Concomitant Medication	cmrouteoth	CM	CMROUTE	Char	derived - copy the other specify field: 99=cmrouteoth
+Concomitant Medication	cmstdat	CM	CMSTDTC	Char	Concatenated and Transformed into ISO8601 format
+Concomitant Medication	cmendat	CM	CMENDTC	Char	Concatenated and Transformed into ISO8601 format
+Concomitant Medication	cmongo	CM	CMENRF	Char	derived: 1="Ongoing"
+Concomitant Medication	cmcomnt	CO	COVAL	Char	COVAL=cmcomnt; The text of the comment. Text over 200 characters can be added to additional columns COVAL1-COVALn
+Concomitant Medication	cmvisdat	CO	CODTC	Char	Concatenated and Transformed into ISO8601 format
+Concomitant Medication	CMATC1	SUPPCM	QNAM	Char	QNAM="CMATC1"
+Concomitant Medication	CMATC1	SUPPCM	QLABEL	Char	QLABEL="ATC Level 1 Description"
+Concomitant Medication	CMATC1	SUPPCM	QVAL	Char	direct copy QVAL=CMATC1
+Concomitant Medication	CMATC1CD	SUPPCM	QNAM	Char	QNAM="CMATC1CD"
+Concomitant Medication	CMATC1CD	SUPPCM	QLABEL	Char	QLABEL="ATC Level 1 Description Code"
+Concomitant Medication	CMATC1CD	SUPPCM	QVAL	Char	direct copy QVAL=CMATC1CD
+Concomitant Medication	CMATC2	SUPPCM	QNAM	Char	QNAM="CMATC2"
+Concomitant Medication	CMATC2	SUPPCM	QLABEL	Char	QLABEL="ATC Level 2 Description"
+Concomitant Medication	CMATC2	SUPPCM	QVAL	Char	direct copy QVAL=CMATC2
+Concomitant Medication	CMATC2CD	SUPPCM	QNAM	Char	QNAM="CMATC2CD"
+Concomitant Medication	CMATC2CD	SUPPCM	QLABEL	Char	QLABEL="ATC Level 2 Description Code"
+Concomitant Medication	CMATC2CD	SUPPCM	QVAL	Char	direct copy QVAL=CMATC2CD
+Concomitant Medication	CMATC3	SUPPCM	QNAM	Char	QNAM="CMATC3"
+Concomitant Medication	CMATC3	SUPPCM	QLABEL	Char	QLABEL="ATC Level 3 Description"
+Concomitant Medication	CMATC3	SUPPCM	QVAL	Char	direct copy QVAL=CMATC3
+Concomitant Medication	CMATC3CD	SUPPCM	QNAM	Char	QNAM="CMATC3CD"
+Concomitant Medication	CMATC3CD	SUPPCM	QLABEL	Char	QLABEL="ATC Level 3 Description Code"
+Concomitant Medication	CMATC3CD	SUPPCM	QVAL	Char	direct copy QVAL=CMATC3CD
+Concomitant Medication	CMATC4	SUPPCM	QNAM	Char	QNAM="CMATC4"
+Concomitant Medication	CMATC4	SUPPCM	QLABEL	Char	QLABEL="ATC Level 4 Description"
+Concomitant Medication	CMATC4	SUPPCM	QVAL	Char	direct copy QVAL=CMATC4
+Concomitant Medication	CMATC4CD	SUPPCM	QNAM	Char	QNAM="CMATC4CD"
+Concomitant Medication	CMATC4CD	SUPPCM	QLABEL	Char	QLABEL="ATC Level 4 Description Code"
+Concomitant Medication	CMATC4CD	SUPPCM	QVAL	Char	direct copy QVAL=CMATC4CD
+Concomitant Medication	CMATC5	SUPPCM	QNAM	Char	QNAM="CMATC5"
+Concomitant Medication	CMATC5	SUPPCM	QLABEL	Char	QLABEL="ATC Level 5 Description"
+Concomitant Medication	CMATC5	SUPPCM	QVAL	Char	direct copy QVAL=CMATC5
+Concomitant Medication	CMATC5CD	SUPPCM	QNAM	Char	QNAM="CMATC5CD"
+Concomitant Medication	CMATC5CD	SUPPCM	QLABEL	Char	QLABEL="ATC Level 5 Description Code"
+Concomitant Medication	CMATC5CD	SUPPCM	QVAL	Char	direct copy QVAL=CMATC5CD
+Informed Consent	codat	DM	RFICDTC	Char	Concatenated and Transformed into ISO8601 format
+Inclusion Criteria	icvisdat	IE	IEDTC	Char	Concatenated and Transformed into ISO8601 format
+Inclusion Criteria	icage	IE	IESPID	Char	1
+Inclusion Criteria	icage	IE	IETESTCD	Char	IC01
+Inclusion Criteria	icage	IE	IETEST	Char	IC01. Healthy adults between ages 18-55 years
+Inclusion Criteria	icage	IE	IEORRES	Char	N (Note: only the inclusion criteria which was not met will be mapped to this domain)
+Inclusion Criteria	ichivrisk	IE	IESPID	Char	2
+Inclusion Criteria	ichivrisk	IE	IETESTCD	Char	IC02
+Inclusion Criteria	ichivrisk	IE	IETEST	Char	IC02. At low risk for HIV infection
+Inclusion Criteria	ichivrisk	IE	IEORRES	Char	N
+Inclusion Criteria	icinfcon	IE	IESPID	Char	3
+Inclusion Criteria	icinfcon	IE	IETESTCD	Char	IC03
+Inclusion Criteria	icinfcon	IE	IETEST	Char	IC03. Able and willing to provide written, informed consent
+Inclusion Criteria	icinfcon	IE	IEORRES	Char	N
+Inclusion Criteria	iccomply	IE	IESPID	Char	4
+Inclusion Criteria	iccomply	IE	IETESTCD	Char	IC04
+Inclusion Criteria	iccomply	IE	IETEST	Char	IC04. Able and willing to comply with all research requirements
+Inclusion Criteria	iccomply	IE	IEORRES	Char	N
+Inclusion Criteria	icblooddon	IE	IESPID	Char	5
+Inclusion Criteria	icblooddon	IE	IETESTCD	Char	IC05 or IC05A after 11/14/2022
+Inclusion Criteria	icblooddon	IE	IETEST	Char	"IC05. Agreement to refrain from blood donation during the course of the study  OR
+IC05. Agreement to refrain from blood donation during the course of the study and within the 2 months prior to study entry after 11/14/2022"
+Inclusion Criteria	icblooddon	IE	IEORRES	Char	N
+Inclusion Criteria	icweight	IE	IESPID	Char	6
+Inclusion Criteria	icweight	IE	IETESTCD	Char	IC06
+Inclusion Criteria	icweight	IE	IETEST	Char	IC06. Minimum body weight of 110 pounds (lbs) (50kg)
+Inclusion Criteria	icweight	IE	IEORRES	Char	N
+Inclusion Criteria	ichgb	IE	IESPID	Char	7a
+Inclusion Criteria	ichgb	IE	IETESTCD	Char	IC07A or IC07AA after 11/14/2022
+Inclusion Criteria	ichgb	IE	IETEST	Char	"IC07A. Hemoglobin >=12.0 g/dL for women; >=12.5 g/dL for men within 30 days before enrollment  OR
+IC07A. Hemoglobin >=11.7 g/dL for women; >=12.5 g/dL for men within 45 days before enrollment after 11/14/2022"
+Inclusion Criteria	ichgb	IE	IEORRES	Char	N
+Inclusion Criteria	icwbc	IE	IESPID	Char	7b
+Inclusion Criteria	icwbc	IE	IETESTCD	Char	IC07B or IC07BA after 11/14/2022
+Inclusion Criteria	icwbc	IE	IETEST	Char	"IC07B. WBC Count =3,500-10,800 cells/mm^3 within 30 days before enrollment  OR
+IC07B. WBC Count =3,500-10,800 cells/mm^3 within 45 days before enrollment after 11/14/2022"
+Inclusion Criteria	icwbc	IE	IEORRES	Char	N
+Inclusion Criteria	icplt	IE	IESPID	Char	7c
+Inclusion Criteria	icplt	IE	IETESTCD	Char	IC07C or IC07CA after 11/14/2022
+Inclusion Criteria	icplt	IE	IETEST	Char	"IC07C. Platelets >=140,000/mm^3 and <=450,000/mm^3 within 30 days before enrollment  OR
+IC07C. Platelets >=140,000/mm^3 and <=450,000/mm^3 within 45 days before enrollment after 11/14/2022"
+Inclusion Criteria	icplt	IE	IEORRES	Char	N
+Inclusion Criteria	icalt	IE	IESPID	Char	7d
+Inclusion Criteria	icalt	IE	IETESTCD	Char	IC07D or IC07DA after 11/14/2022
+Inclusion Criteria	icalt	IE	IETEST	Char	"IC07D. Alanine aminotransferase (ALT; SGPT) < 1.25 x ULN within 30 days before enrollment  OR
+IC07D. Alanine aminotransferase (ALT; SGPT) < 1.25 x ULN within 45 days before enrollment after 11/14/2022"
+Inclusion Criteria	icalt	IE	IEORRES	Char	N
+Inclusion Criteria	iccreatin	IE	IESPID	Char	7e
+Inclusion Criteria	iccreatin	IE	IETESTCD	Char	IC07E or IC07EA after 11/14/2022
+Inclusion Criteria	iccreatin	IE	IETEST	Char	"IC07E. Serum creatinine <=1.25x institutional upper limit of the reference range within 30 days before enrollment  OR
+IC07E. Serum creatinine <=1.25x institutional upper limit of the reference range within 45 days before enrollment after 11/14/2022"
+Inclusion Criteria	iccreatin	IE	IEORRES	Char	N
+Inclusion Criteria	icneghiv	IE	IESPID	Char	7f
+Inclusion Criteria	icneghiv	IE	IETESTCD	Char	IC07F or IC07FA after 11/14/2022
+Inclusion Criteria	icneghiv	IE	IETEST	Char	"IC07F. Negative HIV testing (HIV Ab/antigen 4th generation screen with reflex confirmatory RNA testing) within 30 days before enrollment  OR
+IC07F. Negative HIV testing (HIV Ab/antigen 4th generation screen with reflex confirmatory RNA testing) within 45 days before enrollment after 11/14/2022"
+Inclusion Criteria	icneghiv	IE	IEORRES	Char	N
+Inclusion Criteria	ichbsaghepc	IE	IESPID	Char	7g
+Inclusion Criteria	ichbsaghepc	IE	IETESTCD	Char	IC07G or IC07GA after 11/14/2022
+Inclusion Criteria	ichbsaghepc	IE	IETEST	Char	"IC07G. Negative HBsAg and hepatitis C antibody testing within 30 days before enrollment  OR
+IC07G. Negative HBsAg and hepatitis C antibody testing within 45 days before enrollment after 11/14/2022"
+Inclusion Criteria	ichbsaghepc	IE	IEORRES	Char	N
+Inclusion Criteria	icpostmenop	IE	IESPID	Char	8a
+Inclusion Criteria	icpostmenop	IE	IETESTCD	Char	IC08A
+Inclusion Criteria	icpostmenop	IE	IETEST	Char	IC08A. No reproductive potential due to post-menopausal status or hysterectomy, bilateral oophorectomy, or tubal ligation
+Inclusion Criteria	icpostmenop	IE	IEORRES	Char	N
+Inclusion Criteria	iccontracep	IE	IESPID	Char	8b
+Inclusion Criteria	iccontracep	IE	IETESTCD	Char	IC08B
+Inclusion Criteria	iccontracep	IE	IETEST	Char	IC08B. People of childbearing potential should agree to practice highly effective contraception at least 30 days before enrollment and through 3 months post last vaccination
+Inclusion Criteria	iccontracep	IE	IEORRES	Char	N
+Inclusion Criteria	icsafesex	IE	IESPID	Char	8c
+Inclusion Criteria	icsafesex	IE	IETESTCD	Char	IC08C
+Inclusion Criteria	icsafesex	IE	IETEST	Char	IC08C. All participants are encouraged to engage in safe sex practices to prevent HIV acquisition
+Inclusion Criteria	icsafesex	IE	IEORRES	Char	N
+Inclusion Criteria	icnegbhcg	IE	IESPID	Char	9
+Inclusion Criteria	icnegbhcg	IE	IETESTCD	Char	IC09
+Inclusion Criteria	icnegbhcg	IE	IETEST	Char	IC09. Participants assigned female at birth, a negative urine pregnancy test on the day of enrollment and each vaccination day is required
+Inclusion Criteria	icnegbhcg	IE	IEORRES	Char	N
+Inclusion Criteria	ictravel	IE	IESPID	Char	10
+Inclusion Criteria	ictravel	IE	IETESTCD	Char	IC10
+Inclusion Criteria	ictravel	IE	IETEST	Char	IC10. No plans to travel outside the Washington DC metro area that would prevent compliance with planned study visits
+Inclusion Criteria	ictravel	IE	IEORRES	Char	N
+Inclusion Criteria	ictou	IE	IESPID	Char	11
+Inclusion Criteria	ictou	IE	IETESTCD	Char	IC11
+Inclusion Criteria	ictou	IE	IETEST	Char	IC11. Test of Understanding (minimum passing score of 80% with 2 attempts permitted)
+Inclusion Criteria	ictou	IE	IEORRES	Char	N
+Inclusion Criteria	icdesctxt	IE	IESPID	Char	12
+Inclusion Criteria	icdesctxt	IE	IETESTCD	Char	IC11
+Inclusion Criteria	icdesctxt	IE	IETEST	Char	IC11. Test of Understanding (minimum passing score of 80% with 2 attempts permitted)
+Inclusion Criteria	icdesctxt	IE	IEORRES	Char	N
+Exclusion Criteria	ecvisdat	IE	IEDTC	Char	Concatenated and Transformed into ISO8601 format
+Exclusion Criteria	echivvax	IE	IESPID	Char	1
+Exclusion Criteria	echivvax	IE	IETESTCD	Char	EC01
+Exclusion Criteria	echivvax	IE	IETEST	Char	EC01. Receipt of any investigational HIV vaccine or investigational adjuvant
+Exclusion Criteria	echivvax	IE	IEORRES	Char	Y (Note: only the exclusion criteria which was not met will be mapped to this domain)
+Exclusion Criteria	ecinvestvax	IE	IESPID	Char	2
+Exclusion Criteria	ecinvestvax	IE	IETESTCD	Char	EC02
+Exclusion Criteria	ecinvestvax	IE	IETEST	Char	EC02. Received an investigational product or vaccine in the 30 days before enrollment
+Exclusion Criteria	ecinvestvax	IE	IEORRES	Char	Y
+Exclusion Criteria	ecanotherstudy	IE	IESPID	Char	3
+Exclusion Criteria	ecanotherstudy	IE	IETESTCD	Char	EC03
+Exclusion Criteria	ecanotherstudy	IE	IETEST	Char	EC03. Concurrent participation in another clinical research study
+Exclusion Criteria	ecanotherstudy	IE	IEORRES	Char	Y
+Exclusion Criteria	ecmedcond	IE	IESPID	Char	4
+Exclusion Criteria	ecmedcond	IE	IETESTCD	Char	EC04
+Exclusion Criteria	ecmedcond	IE	IETEST	Char	EC04. Any serious medical illness or condition
+Exclusion Criteria	ecmedcond	IE	IEORRES	Char	Y
+Exclusion Criteria	ecimmunoglob	IE	IESPID	Char	5
+Exclusion Criteria	ecimmunoglob	IE	IETESTCD	Char	EC05
+Exclusion Criteria	ecimmunoglob	IE	IETEST	Char	EC05. Receipt of immunoglobulins or blood products within 3 months before enrollment
+Exclusion Criteria	ecimmunoglob	IE	IEORRES	Char	Y
+Exclusion Criteria	ecanaphylaxis	IE	IESPID	Char	6
+Exclusion Criteria	ecanaphylaxis	IE	IETESTCD	Char	EC06
+Exclusion Criteria	ecanaphylaxis	IE	IETEST	Char	EC06. Any history of anaphylaxis or allergy to study product
+Exclusion Criteria	ecanaphylaxis	IE	IEORRES	Char	Y
+Exclusion Criteria	ecsicklecell	IE	IESPID	Char	7
+Exclusion Criteria	ecsicklecell	IE	IETESTCD	Char	EC07
+Exclusion Criteria	ecsicklecell	IE	IETEST	Char	EC07. History of sickle cell trait or disease
+Exclusion Criteria	ecsicklecell	IE	IEORRES	Char	Y
+Exclusion Criteria	eclactation	IE	IESPID	Char	8
+Exclusion Criteria	eclactation	IE	IETESTCD	Char	EC08
+Exclusion Criteria	eclactation	IE	IETEST	Char	EC08. Pregnancy, lactation, or intention to become pregnant during the study
+Exclusion Criteria	eclactation	IE	IEORRES	Char	Y
+Exclusion Criteria	eccancer	IE	IESPID	Char	9
+Exclusion Criteria	eccancer	IE	IETESTCD	Char	EC09
+Exclusion Criteria	eccancer	IE	IETEST	Char	EC09. History of active/recent cancer still within treatment or active surveillance follow-up
+Exclusion Criteria	eccancer	IE	IEORRES	Char	Y
+Exclusion Criteria	ecautoimmune	IE	IESPID	Char	10
+Exclusion Criteria	ecautoimmune	IE	IETESTCD	Char	EC10
+Exclusion Criteria	ecautoimmune	IE	IETEST	Char	EC10. History of autoimmune disease
+Exclusion Criteria	ecautoimmune	IE	IEORRES	Char	Y
+Exclusion Criteria	ecpimmc	IE	IESPID	Char	11
+Exclusion Criteria	ecpimmc	IE	IETESTCD	Char	EC11
+Exclusion Criteria	ecpimmc	IE	IETEST	Char	EC11. History of Potentially Immune-Mediated Medical Conditions
+Exclusion Criteria	ecpimmc	IE	IEORRES	Char	Y
+Exclusion Criteria	ecalcoholdrug	IE	IESPID	Char	12
+Exclusion Criteria	ecalcoholdrug	IE	IETESTCD	Char	EC12
+Exclusion Criteria	ecalcoholdrug	IE	IETEST	Char	EC12. Suspected or known current alcohol or drug abuse as defined by an alcohol intake of greater than 3 drinks a day on average for a man, and greater than 2 drinks a day on average for a woman
+Exclusion Criteria	ecalcoholdrug	IE	IEORRES	Char	Y
+Exclusion Criteria	ecsigdisease	IE	IESPID	Char	13
+Exclusion Criteria	ecsigdisease	IE	IETESTCD	Char	EC13
+Exclusion Criteria	ecsigdisease	IE	IETEST	Char	EC13. Any other significant disease, disorder or finding which may significantly increase the risk to the volunteer because of participation in the study
+Exclusion Criteria	ecsigdisease	IE	IEORRES	Char	Y
+Exclusion Criteria	ecsplenectomy	IE	IESPID	Char	14
+Exclusion Criteria	ecsplenectomy	IE	IETESTCD	Char	EC14
+Exclusion Criteria	ecsplenectomy	IE	IETEST	Char	EC14. History of splenectomy
+Exclusion Criteria	ecsplenectomy	IE	IEORRES	Char	Y
+Exclusion Criteria	ecimmunodef	IE	IESPID	Char	15
+Exclusion Criteria	ecimmunodef	IE	IETESTCD	Char	EC15
+Exclusion Criteria	ecimmunodef	IE	IETEST	Char	EC15. History of confirmed or suspected immunodeficiency
+Exclusion Criteria	ecimmunodef	IE	IEORRES	Char	Y
+Exclusion Criteria	ecangioedema	IE	IESPID	Char	16
+Exclusion Criteria	ecangioedema	IE	IETESTCD	Char	EC16
+Exclusion Criteria	ecangioedema	IE	IETEST	Char	EC16. History of hereditary angioedema (HAE) acquired angioedema (AAE), or idiopathic forms of angioedema
+Exclusion Criteria	ecangioedema	IE	IEORRES	Char	Y
+Exclusion Criteria	ecasthma	IE	IESPID	Char	17
+Exclusion Criteria	ecasthma	IE	IETESTCD	Char	EC17
+Exclusion Criteria	ecasthma	IE	IETEST	Char	EC17. History of asthma that is unstable or required emergent care, urgent care, hospitalization, or intubation during the past 2 years
+Exclusion Criteria	ecasthma	IE	IEORRES	Char	Y
+Exclusion Criteria	ecdiabetes	IE	IESPID	Char	18
+Exclusion Criteria	ecdiabetes	IE	IETESTCD	Char	EC18
+Exclusion Criteria	ecdiabetes	IE	IETEST	Char	EC18. History of diabetes mellitus (type I or II), with the exception of gestational diabetes
+Exclusion Criteria	ecdiabetes	IE	IEORRES	Char	Y
+Exclusion Criteria	ecthyroid	IE	IESPID	Char	19
+Exclusion Criteria	ecthyroid	IE	IETESTCD	Char	EC19
+Exclusion Criteria	ecthyroid	IE	IETEST	Char	EC19. History of thyroid disease (except for well controlled hypothyroidism)
+Exclusion Criteria	ecthyroid	IE	IEORRES	Char	Y
+Exclusion Criteria	ecurticaria	IE	IESPID	Char	20
+Exclusion Criteria	ecurticaria	IE	IETESTCD	Char	EC20
+Exclusion Criteria	ecurticaria	IE	IETEST	Char	EC20. History of idiopathic urticaria within the past year
+Exclusion Criteria	ecurticaria	IE	IEORRES	Char	Y
+Exclusion Criteria	echypertension	IE	IESPID	Char	21
+Exclusion Criteria	echypertension	IE	IETESTCD	Char	EC21
+Exclusion Criteria	echypertension	IE	IETEST	Char	EC21. History of hypertension that is not well controlled by medication or that is persistently greater than 140/95 at screening
+Exclusion Criteria	echypertension	IE	IEORRES	Char	Y
+Exclusion Criteria	ecbleeding	IE	IESPID	Char	22
+Exclusion Criteria	ecbleeding	IE	IETESTCD	Char	EC22
+Exclusion Criteria	ecbleeding	IE	IETEST	Char	EC22. History of bleeding disorder diagnosed by a doctor or significant bruising or bleeding difficulties with IM injections or blood draws
+Exclusion Criteria	ecbleeding	IE	IEORRES	Char	Y
+Exclusion Criteria	ecneurodisease	IE	IESPID	Char	23
+Exclusion Criteria	ecneurodisease	IE	IETESTCD	Char	EC23
+Exclusion Criteria	ecneurodisease	IE	IETEST	Char	EC23. History of chronic or active neurologic disease to include seizure disorder and chronic migraine headaches
+Exclusion Criteria	ecneurodisease	IE	IEORRES	Char	Y
+Exclusion Criteria	ecimmunosup	IE	IESPID	Char	24a
+Exclusion Criteria	ecimmunosup	IE	IETESTCD	Char	EC24A
+Exclusion Criteria	ecimmunosup	IE	IETEST	Char	EC24A. Participants receiving Systemic immunosuppressive medications or cytotoxic medications within 12 weeks before enrollment
+Exclusion Criteria	ecimmunosup	IE	IEORRES	Char	Y
+Exclusion Criteria	ecimmunomod	IE	IESPID	Char	24b
+Exclusion Criteria	ecimmunomod	IE	IETESTCD	Char	EC24B
+Exclusion Criteria	ecimmunomod	IE	IETEST	Char	EC24B. Participants receiving Treatment with known immunomodulators including allergy immunotherapy (other than NSAIDs) for any reason
+Exclusion Criteria	ecimmunomod	IE	IEORRES	Char	Y
+Exclusion Criteria	ecattenuatedvax	IE	IESPID	Char	24c
+Exclusion Criteria	ecattenuatedvax	IE	IETESTCD	Char	EC24C
+Exclusion Criteria	ecattenuatedvax	IE	IETEST	Char	EC24C. Participants receiving Live attenuated vaccines within 30 days before initial study vaccine administration
+Exclusion Criteria	ecattenuatedvax	IE	IEORRES	Char	Y
+Exclusion Criteria	ecsubunit	IE	IESPID	Char	24d
+Exclusion Criteria	ecsubunit	IE	IETESTCD	Char	EC24D
+Exclusion Criteria	ecsubunit	IE	IETEST	Char	EC24D. Participants receiving Medically indicated subunit, mRNA, or killed vaccines or allergy treatment with antigen injections, planned for 14 days before or after study vaccine administration
+Exclusion Criteria	ecsubunit	IE	IEORRES	Char	Y
+Exclusion Criteria	ecarthritis	IE	IESPID	Char	25
+Exclusion Criteria	ecarthritis	IE	IETESTCD	Char	EC25
+Exclusion Criteria	ecarthritis	IE	IETEST	Char	E25. History of arthritis diagnosis other than osteoarthritis
+Exclusion Criteria	ecarthritis	IE	IEORRES	Char	Y
+Exclusion Criteria	ecrheumatoid	IE	IESPID	Char	26
+Exclusion Criteria	ecrheumatoid	IE	IETESTCD	Char	EC26
+Exclusion Criteria	ecrheumatoid	IE	IETEST	Char	E26. History of other diagnosed rheumatoid disorders
+Exclusion Criteria	ecrheumatoid	IE	IEORRES	Char	Y
+Exclusion Criteria	ecillnessfever	IE	IESPID	Char	27
+Exclusion Criteria	ecillnessfever	IE	IETESTCD	Char	EC27
+Exclusion Criteria	ecillnessfever	IE	IETEST	Char	E27. Has an acute illness or temperature >=38.0 C/100.4 F on any study injection day or within 48 hours of planned study injection
+Exclusion Criteria	ecillnessfever	IE	IEORRES	Char	Y
+Enrollment	iecat	IE	IECAT	Char	derived with formatted value: 1=Inclusion Criteria 2=Exclusion Criteria
+Enrollment	ietestcd	IE	IETESTCD	Char	need to separate each criteria, refer to IC_EC sheet for the code
+Demographics	dmdat	DM	DMDTC	Char	Concatenated and Transformed into ISO8601 format
+Demographics	gender	SC	SCTESTCD	Char	GENIDENT
+Demographics	gender	SC	SCTEST	Char	Gender Identity
+Demographics	gender	SC	SCORRES	Char	"derived, copy the formatted value 
+0=""Male""
+1=""Female""
+2=""Transgender""
+3=""Non-binary"""
+Demographics	gender	SC	SCSTRESC	Char	SCSTRESC=SCORRES
+Demographics	sex	DM	SEX	Char	"derived, directly copy the formatted value 
+0='Male', 
+1='Female', 
+2='Undifferentiated'"
+Demographics	age	DM	AGE	Num	direct copy
+Demographics	age	DM	AGEU	Char	assigned, AGEU=YEARS
+Demographics	ethnic	DM	ETHNIC	Char	"derived, directly copy the formatted value 
+0='Non-Hispanic/Latino'
+1='Hispanic/Latino'"
+Demographics	race	DM	RACE	Char	"derived, 
+1='WHITE'
+2='BLACK OR AFRICAN AMERICAN'
+3='ASIAN'
+4='AMERICAN INDIAN OR ALASKA NATIVE'
+5='MULTIPLE'
+6='NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER'
+99='OTHER'"
+Demographics	race5	SUPPDM	QNAM	Char	RACE5 (Note: only map when it's Yes)
+Demographics	race5	SUPPDM	QLABEL	Char	MULTIPLE RACE
+Demographics	race5	SUPPDM	QVAL	Char	WHITE
+Demographics	race3	SUPPDM	QNAM	Char	RACE3 (Note: only map when it's Yes)
+Demographics	race3	SUPPDM	QLABEL	Char	MULTIPLE RACE
+Demographics	race3	SUPPDM	QVAL	Char	BLACK OR AFRICAN AMERICAN
+Demographics	race2	SUPPDM	QNAM	Char	RACE2 (Note: only map when it's Yes)
+Demographics	race2	SUPPDM	QLABEL	Char	MULTIPLE RACE
+Demographics	race2	SUPPDM	QVAL	Char	ASIAN
+Demographics	race1	SUPPDM	QNAM	Char	RACE1 (Note: only map when it's Yes)
+Demographics	race1	SUPPDM	QLABEL	Char	MULTIPLE RACE
+Demographics	race1	SUPPDM	QVAL	Char	AMERICAN INDIAN OR ALASKA NATIVE
+Demographics	race4	SUPPDM	QNAM	Char	RACE4 (Note: only map when it's Yes)
+Demographics	race4	SUPPDM	QLABEL	Char	MULTIPLE RACE
+Demographics	race4	SUPPDM	QVAL	Char	NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER
+Demographics	raceoth	SUPPDM	QNAM	Char	RACEOTH
+Demographics	raceoth	SUPPDM	QLABEL	Char	OTHER RACE
+Demographics	raceoth	SUPPDM	QVAL	Char	QVAL=upcase(RACEOTH)
+Demographics	edlevel_scorres	SC	SCTESTCD	Char	EDULEVEL
+Demographics	edlevel_scorres	SC	SCTEST	Char	Level of Education Attained
+Demographics	edlevel_scorres	SC	SCORRES	Char	"derived, formatted value:
+1=""Primary education""
+2=""Secondary education""
+3=""Undergraduate Degree""
+4=""Graduate Degree"""
+Demographics	edlevel_scorres	SC	SCSTRESC	Char	SCSTRESC=SCORRES
+Demographics	eduoth	SC	SCORRES	Char	direct copy
+Demographics	occup	SC	SCTESTCD	Char	EMPJOB
+Demographics	occup	SC	SCTEST	Char	Employee Job
+Demographics	occup	SC	SCORRES	Char	"derived, formatted value:
+1=""Business""
+2=""Construction/Trade""
+3=""Education""
+4=""Food/retail""
+5=""Government""
+6=""Health""
+7=""Legal""
+8=""Science/Research""
+9=""Student""
+10=""Transportation""
+11=""Retired/Not working"""
+Demographics	occup	SC	SCSTRESC	Char	SCSTRESC=SCORRES
+Demographics	occupsp	SC	SCORRES	Char	direct copy
+Randomization	randgroup	DM	ARMCD	Char	based on the randomization information, derived as ALFQ200, ALFQ100 or ALFQ50
+Randomization	randgroup	DM	ARM	Char	"based on the randomization information, derived as:
+Vaccine A244/B.63521 + 200 ug ALFQ, 
+Vaccine A244/B.63521 + 100 ug ALFQ,
+Vaccine A244/B.63521 + 50 ug ALFQ"
+Randomization	randdat	DS	DSDTC	Char	Concatenated date and time and Transformed into ISO8601 format
+Medical History	mhdat	MH	MHDTC/MHENTPT	Char	ISO 8601 datetime or interval
+Medical History	mhyn	MH	MHSTAT	Char	derived, "Not Done" if mhyn=9 or Null
+Medical History	mhreasnd	MH	MHREASND	Char	direct copy
+Medical History	gen_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	gen_mhoccur	MH	MHCAT	Char	General
+Medical History	gen_mhsig	MH	MHTERM	Char	direct copy
+Medical History	gen_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	gen_mhrslv	MH	MHENRTPT	Char	If gen_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	heent_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	heent_mhoccur	MH	MHCAT	Char	HEENT
+Medical History	heent_mhsig	MH	MHTERM	Char	direct copy
+Medical History	heent_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	heent_mhrslv	MH	MHENRTPT	Char	If heent_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	cardio_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	cardio_mhoccur	MH	MHCAT	Char	Cardiovascular
+Medical History	cardio_mhsig	MH	MHTERM	Char	direct copy
+Medical History	cardio_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	cardio_mhrslv	MH	MHENRTPT	Char	If cardio_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	resp_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	resp_mhoccur	MH	MHCAT	Char	Respiratory
+Medical History	resp_mhsig	MH	MHTERM	Char	direct copy
+Medical History	resp_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	resp_mhrslv	MH	MHENRTPT	Char	If resp_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	gastro_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	gastro_mhoccur	MH	MHCAT	Char	Gastrointestinal/Digestive
+Medical History	gastro_mhsig	MH	MHTERM	Char	direct copy
+Medical History	gastro_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	gastro_mhrslv	MH	MHENRTPT	Char	If gastro_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	genito_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	genito_mhoccur	MH	MHCAT	Char	Genitourinary
+Medical History	genito_mhsig	MH	MHTERM	Char	direct copy
+Medical History	genito_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	genito_mhrslv	MH	MHENRTPT	Char	If genito_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	ms_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	ms_mhoccur	MH	MHCAT	Char	Musculoskeletal
+Medical History	ms_mhsig	MH	MHTERM	Char	direct copy
+Medical History	ms_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	ms_mhrslv	MH	MHENRTPT	Char	If ms_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	neuro_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	neuro_mhoccur	MH	MHCAT	Char	Neurologic
+Medical History	neuro_mhsig	MH	MHTERM	Char	direct copy
+Medical History	neuro_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	neuro_mhrslv	MH	MHENRTPT	Char	If neuro_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	endo_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	endo_mhoccur	MH	MHCAT	Char	Endocrine
+Medical History	endo_mhsig	MH	MHTERM	Char	direct copy
+Medical History	endo_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	endo_mhrslv	MH	MHENRTPT	Char	If endo_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	psyc_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	psyc_mhoccur	MH	MHCAT	Char	Psychiatric
+Medical History	psyc_mhsig	MH	MHTERM	Char	direct copy
+Medical History	psyc_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	psyc_mhrslv	MH	MHENRTPT	Char	If psyc_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	hem_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	hem_mhoccur	MH	MHCAT	Char	Hematologic/Lymphatic
+Medical History	hem_mhsig	MH	MHTERM	Char	direct copy
+Medical History	hem_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	hem_mhrslv	MH	MHENRTPT	Char	If hem_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	metab_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	metab_mhoccur	MH	MHCAT	Char	Metabolic/Nutritional
+Medical History	metab_mhsig	MH	MHTERM	Char	direct copy
+Medical History	metab_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	metab_mhrslv	MH	MHENRTPT	Char	If metab_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	allergy_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	allergy_mhoccur	MH	MHCAT	Char	Allergy/Drug Sensitivity
+Medical History	allergy_mhsig	MH	MHTERM	Char	direct copy
+Medical History	allergy_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	allergy_mhrslv	MH	MHENRTPT	Char	If allergy_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	oth1_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	oth1_mhterm	MH	MHCAT	Char	manually review the term and code the category
+Medical History	oth1_mhsig	MH	MHTERM	Char	direct copy
+Medical History	oth1_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	oth1_mhrslv	MH	MHENRTPT	Char	If oth1_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	oth2_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	oth2_mhterm	MH	MHCAT	Char	manually review the term and code the category
+Medical History	oth2_mhsig	MH	MHTERM	Char	direct copy
+Medical History	oth2_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	oth2_mhrslv	MH	MHENRTPT	Char	If oth2_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	oth3_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	oth3_mhterm	MH	MHCAT	Char	manually review the term and code the category
+Medical History	oth3_mhsig	MH	MHTERM	Char	direct copy
+Medical History	oth3_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	oth3_mhrslv	MH	MHENRTPT	Char	If oth3_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	mhdat	MH	MHDTC/MHENTPT	Char	ISO 8601 datetime or interval
+Medical History	mhyn	MH	MHSTAT	Char	derived, "Not Done" if mhyn=9 or Null
+Medical History	mhreasnd	MH	MHREASND	Char	direct copy
+Medical History	gen_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	gen_mhoccur	MH	MHCAT	Char	General
+Medical History	gen_mhsig	MH	MHTERM	Char	direct copy
+Medical History	gen_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	gen_mhrslv	MH	MHENRTPT	Char	If gen_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	heent_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	heent_mhoccur	MH	MHCAT	Char	HEENT
+Medical History	heent_mhsig	MH	MHTERM	Char	direct copy
+Medical History	heent_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	heent_mhrslv	MH	MHENRTPT	Char	If heent_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	cardio_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	cardio_mhoccur	MH	MHCAT	Char	Cardiovascular
+Medical History	cardio_mhsig	MH	MHTERM	Char	direct copy
+Medical History	cardio_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	cardio_mhrslv	MH	MHENRTPT	Char	If cardio_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	resp_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	resp_mhoccur	MH	MHCAT	Char	Respiratory
+Medical History	resp_mhsig	MH	MHTERM	Char	direct copy
+Medical History	resp_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	resp_mhrslv	MH	MHENRTPT	Char	If resp_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	gastro_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	gastro_mhoccur	MH	MHCAT	Char	Gastrointestinal/Digestive
+Medical History	gastro_mhsig	MH	MHTERM	Char	direct copy
+Medical History	gastro_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	gastro_mhrslv	MH	MHENRTPT	Char	If gastro_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	genito_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	genito_mhoccur	MH	MHCAT	Char	Genitourinary
+Medical History	genito_mhsig	MH	MHTERM	Char	direct copy
+Medical History	genito_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	genito_mhrslv	MH	MHENRTPT	Char	If genito_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	ms_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	ms_mhoccur	MH	MHCAT	Char	Musculoskeletal
+Medical History	ms_mhsig	MH	MHTERM	Char	direct copy
+Medical History	ms_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	ms_mhrslv	MH	MHENRTPT	Char	If ms_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	neuro_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	neuro_mhoccur	MH	MHCAT	Char	Neurologic
+Medical History	neuro_mhsig	MH	MHTERM	Char	direct copy
+Medical History	neuro_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	neuro_mhrslv	MH	MHENRTPT	Char	If neuro_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	endo_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	endo_mhoccur	MH	MHCAT	Char	Endocrine
+Medical History	endo_mhsig	MH	MHTERM	Char	direct copy
+Medical History	endo_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	endo_mhrslv	MH	MHENRTPT	Char	If endo_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	psyc_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	psyc_mhoccur	MH	MHCAT	Char	Psychiatric
+Medical History	psyc_mhsig	MH	MHTERM	Char	direct copy
+Medical History	psyc_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	psyc_mhrslv	MH	MHENRTPT	Char	If psyc_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	hem_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	hem_mhoccur	MH	MHCAT	Char	Hematologic/Lymphatic
+Medical History	hem_mhsig	MH	MHTERM	Char	direct copy
+Medical History	hem_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	hem_mhrslv	MH	MHENRTPT	Char	If hem_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	metab_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	metab_mhoccur	MH	MHCAT	Char	Metabolic/Nutritional
+Medical History	metab_mhsig	MH	MHTERM	Char	direct copy
+Medical History	metab_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	metab_mhrslv	MH	MHENRTPT	Char	If metab_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	allergy_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	allergy_mhoccur	MH	MHCAT	Char	Allergy/Drug Sensitivity
+Medical History	allergy_mhsig	MH	MHTERM	Char	direct copy
+Medical History	allergy_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	allergy_mhrslv	MH	MHENRTPT	Char	If allergy_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	oth1_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	oth1_mhterm	MH	MHCAT	Char	manually review the term and code the category
+Medical History	oth1_mhsig	MH	MHTERM	Char	direct copy
+Medical History	oth1_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	oth1_mhrslv	MH	MHENRTPT	Char	If oth1_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	oth2_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	oth2_mhterm	MH	MHCAT	Char	manually review the term and code the category
+Medical History	oth2_mhsig	MH	MHTERM	Char	direct copy
+Medical History	oth2_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	oth2_mhrslv	MH	MHENRTPT	Char	If oth2_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+Medical History	oth3_mhoccur	MH	MHOCCUR	Char	Y
+Medical History	oth3_mhterm	MH	MHCAT	Char	manually review the term and code the category
+Medical History	oth3_mhsig	MH	MHTERM	Char	direct copy
+Medical History	oth3_mhstdat	MH	MHSTDTC	Char	ISO 8601 datetime or interval
+Medical History	oth3_mhrslv	MH	MHENRTPT	Char	If oth3_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING
+non-vaccination visit vital signs	vsvisdat	VS	VSDTC	Char	derived, Concatenated and Transformed into ISO8601 format
+non-vaccination visit vital signs	vstim	VS	VSDTC	Char	
+non-vaccination visit vital signs	vsnd	VS	VSSTAT	Char	derived, Only map when value is 9="Not Done"
+non-vaccination visit vital signs	vsreasnd	VS	VSREASND	Char	direct copy
+non-vaccination visit vital signs	vsheight	VS	VSTESTCD	Char	assigned, = "HEIGHT"
+non-vaccination visit vital signs	vsheight	VS	VSTEST	Char	assigned, = "HEIGHT"
+non-vaccination visit vital signs	vsheight	VS	VSORRES	Char	direct copy to character format
+non-vaccination visit vital signs	vsheight	VS	VSORRESU	Char	assigned, = "in"
+non-vaccination visit vital signs	vsheight	VS	VSSTRESC	Char	direct copy to character format
+non-vaccination visit vital signs	vsheight	VS	VSSTRESN	Num	direct copy
+non-vaccination visit vital signs	vsheight	VS	VSSTRESU	Char	assigned, = "in"
+non-vaccination visit vital signs	vsweight	VS	VSTESTCD	Char	assigned, = "WEIGHT"
+non-vaccination visit vital signs	vsweight	VS	VSTEST	Char	assigned, = "WEIGHT"
+non-vaccination visit vital signs	vsweight	VS	VSORRES	Char	direct copy to character format
+non-vaccination visit vital signs	vsweight	VS	VSORRESU	Char	assigned, = "LB"
+non-vaccination visit vital signs	vsweight	VS	VSSTRESC	Char	direct copy to character format
+non-vaccination visit vital signs	vsweight	VS	VSSTRESN	Num	direct copy
+non-vaccination visit vital signs	vsweight	VS	VSSTRESU	Char	assigned, = "LB"
+non-vaccination visit vital signs	vstemp	VS	VSTESTCD	Char	assigned, = "TEMP"
+non-vaccination visit vital signs	vstemp	VS	VSTEST	Char	assigned, = "TEMPERATURE"
+non-vaccination visit vital signs	vstemp	VS	VSORRES	Char	direct copy to character format
+non-vaccination visit vital signs	vstempu	VS	VSORRESU	Char	direct copy to formatted value. 1=C, 2=F
+non-vaccination visit vital signs	vstemp	VS	VSSTRESC	Char	direct copy to character format
+non-vaccination visit vital signs	vstemp	VS	VSSTRESN	Num	direct copy if unit is F, derived value (vstemp*9/5+32)
+non-vaccination visit vital signs	vstempu	VS	VSSTRESU	Char	assigned, = "F"
+non-vaccination visit vital signs	vssit	VS	VSPOS	Char	POSITION=SITTING
+non-vaccination visit vital signs	vspulse	VS	VSTESTCD	Char	assigned, = "PULSE"
+non-vaccination visit vital signs	vspulse	VS	VSTEST	Char	assigned, = "PULSE RATE"
+non-vaccination visit vital signs	vspulse	VS	VSORRES	Char	direct copy to character format
+non-vaccination visit vital signs	vspulse	VS	VSORRESU	Char	assigned, ="beats/min"
+non-vaccination visit vital signs	vspulse	VS	VSSTRESC	Char	direct copy to character format
+non-vaccination visit vital signs	vspulse	VS	VSSTRESN	Num	direct copy
+non-vaccination visit vital signs	vspulse	VS	VSSTRESU	Char	assigned, ="beats/minute"
+non-vaccination visit vital signs	vsresp	VS	VSTESTCD	Char	assigned, = "RESP"
+non-vaccination visit vital signs	vsresp	VS	VSTEST	Char	assigned, = "RESPIRATORY RATE"
+non-vaccination visit vital signs	vsresp	VS	VSORRES	Char	direct copy to character format
+non-vaccination visit vital signs	vsresp	VS	VSORRESU	Char	assigned, ="breaths/min"
+non-vaccination visit vital signs	vsresp	VS	VSSTRESC	Char	direct copy to character format
+non-vaccination visit vital signs	vsresp	VS	VSSTRESN	Num	direct copy
+non-vaccination visit vital signs	vsresp	VS	VSSTRESU	Char	assigned, ="breaths/minute"
+non-vaccination visit vital signs	vssysbp	VS	VSTESTCD	Char	assigned, = "SYSBP"
+non-vaccination visit vital signs	vssysbp	VS	VSTEST	Char	assigned, = "SYSTOLIC BLOOD PRESSURE"
+non-vaccination visit vital signs	vssysbp	VS	VSORRES	Char	direct copy to character format
+non-vaccination visit vital signs	vssysbp	VS	VSORRESU	Char	assigned, ="mmHg"
+non-vaccination visit vital signs	vssysbp	VS	VSSTRESC	Char	direct copy to character format
+non-vaccination visit vital signs	vssysbp	VS	VSSTRESN	Num	direct copy
+non-vaccination visit vital signs	vssysbp	VS	VSSTRESU	Char	assigned, ="mmHg"
+non-vaccination visit vital signs	vsdiabp	VS	VSTESTCD	Char	assigned, = "DIABP"
+non-vaccination visit vital signs	vsdiabp	VS	VSTEST	Char	assigned, = "DIASTOLIC BLOOD PRESSURE"
+non-vaccination visit vital signs	vsdiabp	VS	VSORRES	Char	direct copy to character format
+non-vaccination visit vital signs	vsdiabp	VS	VSORRESU	Char	assigned, ="mmHg"
+non-vaccination visit vital signs	vsdiabp	VS	VSSTRESC	Char	direct copy to character format
+non-vaccination visit vital signs	vsdiabp	VS	VSSTRESN	Num	direct copy
+non-vaccination visit vital signs	vsdiabp	VS	VSSTRESU	Char	assigned, ="mmHg"
+vaccination visit vital signs	vvsvisdat	VS	VSDTC	Char	derived, Concatenated and Transformed into ISO8601 format
+vaccination visit vital signs	vvstimpr	VS	VSDTC	Char	
+vaccination visit vital signs	vvsndpr	VS	VSSTAT	Char	derived, Only map when value is 9="Not Done"
+vaccination visit vital signs	vvsreasndpr	VS	VSREASND	Char	direct copy
+vaccination visit vital signs	vvstemppr	VS	VSTESTCD	Char	assigned, = "TEMP"
+vaccination visit vital signs	vvstemppr	VS	VSTEST	Char	assigned, = "TEMPERATURE"
+vaccination visit vital signs	vvstemppr	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvstempupr	VS	VSORRESU	Char	direct copy to formatted value. 1=C, 2=F
+vaccination visit vital signs	vvstemppr	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvstemppr	VS	VSSTRESN	Num	direct copy if unit is F, derived value (vstemp*9/5+32)
+vaccination visit vital signs	vvstempupr	VS	VSSTRESU	Char	assigned, = "F"
+vaccination visit vital signs	vvssitpr	VS	VSPOS	Char	POSITION=SITTING
+vaccination visit vital signs	vvspulsepr	VS	VSTESTCD	Char	assigned, = "PULSE"
+vaccination visit vital signs	vvspulsepr	VS	VSTEST	Char	assigned, = "PULSE RATE"
+vaccination visit vital signs	vvspulsepr	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvspulsepr	VS	VSORRESU	Char	assigned, ="beats/min"
+vaccination visit vital signs	vvspulsepr	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvspulsepr	VS	VSSTRESN	Num	direct copy
+vaccination visit vital signs	vvspulsepr	VS	VSSTRESU	Char	assigned, ="beats/minute"
+vaccination visit vital signs	vvsresppr	VS	VSTESTCD	Char	assigned, = "RESP"
+vaccination visit vital signs	vvsresppr	VS	VSTEST	Char	assigned, = "RESPIRATORY RATE"
+vaccination visit vital signs	vvsresppr	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvsresppr	VS	VSORRESU	Char	assigned, ="breaths/min"
+vaccination visit vital signs	vvsresppr	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvsresppr	VS	VSSTRESN	Num	direct copy
+vaccination visit vital signs	vvsresppr	VS	VSSTRESU	Char	assigned, ="breaths/minute"
+vaccination visit vital signs	vvssysbppr	VS	VSTESTCD	Char	assigned, = "SYSBP"
+vaccination visit vital signs	vvssysbppr	VS	VSTEST	Char	assigned, = "SYSTOLIC BLOOD PRESSURE"
+vaccination visit vital signs	vvssysbppr	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvssysbppr	VS	VSORRESU	Char	assigned, ="mmHg"
+vaccination visit vital signs	vvssysbppr	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvssysbppr	VS	VSSTRESN	Num	direct copy
+vaccination visit vital signs	vvssysbppr	VS	VSSTRESU	Char	assigned, ="mmHg"
+vaccination visit vital signs	vvsdiabppr	VS	VSTESTCD	Char	assigned, = "DIABP"
+vaccination visit vital signs	vvsdiabppr	VS	VSTEST	Char	assigned, = "DIASTOLIC BLOOD PRESSURE"
+vaccination visit vital signs	vvsdiabppr	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvsdiabppr	VS	VSORRESU	Char	assigned, ="mmHg"
+vaccination visit vital signs	vvsdiabppr	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvsdiabppr	VS	VSSTRESN	Num	direct copy
+vaccination visit vital signs	vvsdiabppr	VS	VSSTRESU	Char	assigned, ="mmHg"
+vaccination visit vital signs	vvsvisdat	VS	VSDTC	Char	derived, Concatenated and Transformed into ISO8601 format
+vaccination visit vital signs	vvstimpo	VS	VSDTC	Char	
+vaccination visit vital signs	vvsndpo	VS	VSSTAT	Char	derived, Only map when value is 9="Not Done"
+vaccination visit vital signs	vvsreasndpo	VS	VSREASND	Char	direct copy
+vaccination visit vital signs	vvstemppo	VS	VSTESTCD	Char	assigned, = "TEMP"
+vaccination visit vital signs	vvstemppo	VS	VSTEST	Char	assigned, = "TEMPERATURE"
+vaccination visit vital signs	vvstemppo	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvstempupo	VS	VSORRESU	Char	direct copy to formatted value. 1=C, 2=F
+vaccination visit vital signs	vvstemppo	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvstemppo	VS	VSSTRESN	Num	direct copy if unit is F, derived value (vstemp*9/5+32)
+vaccination visit vital signs	vvstempupo	VS	VSSTRESU	Char	assigned, = "F"
+vaccination visit vital signs	vvssitpo	VS	VSPOS	Char	POSITION=SITTING
+vaccination visit vital signs	vvspulsepo	VS	VSTESTCD	Char	assigned, = "PULSE"
+vaccination visit vital signs	vvspulsepo	VS	VSTEST	Char	assigned, = "PULSE RATE"
+vaccination visit vital signs	vvspulsepo	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvspulsepo	VS	VSORRESU	Char	assigned, ="beats/min"
+vaccination visit vital signs	vvspulsepo	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvspulsepo	VS	VSSTRESN	Num	direct copy
+vaccination visit vital signs	vvspulsepo	VS	VSSTRESU	Char	assigned, ="beats/minute"
+vaccination visit vital signs	vvsresppo	VS	VSTESTCD	Char	assigned, = "RESP"
+vaccination visit vital signs	vvsresppo	VS	VSTEST	Char	assigned, = "RESPIRATORY RATE"
+vaccination visit vital signs	vvsresppo	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvsresppo	VS	VSORRESU	Char	assigned, ="breaths/min"
+vaccination visit vital signs	vvsresppo	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvsresppo	VS	VSSTRESN	Num	direct copy
+vaccination visit vital signs	vvsresppo	VS	VSSTRESU	Char	assigned, ="breaths/minute"
+vaccination visit vital signs	vvssysbppo	VS	VSTESTCD	Char	assigned, = "SYSBP"
+vaccination visit vital signs	vvssysbppo	VS	VSTEST	Char	assigned, = "SYSTOLIC BLOOD PRESSURE"
+vaccination visit vital signs	vvssysbppo	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvssysbppo	VS	VSORRESU	Char	assigned, ="mmHg"
+vaccination visit vital signs	vvssysbppo	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvssysbppo	VS	VSSTRESN	Num	direct copy
+vaccination visit vital signs	vvssysbppo	VS	VSSTRESU	Char	assigned, ="mmHg"
+vaccination visit vital signs	vvsdiabppo	VS	VSTESTCD	Char	assigned, = "DIABP"
+vaccination visit vital signs	vvsdiabppo	VS	VSTEST	Char	assigned, = "DIASTOLIC BLOOD PRESSURE"
+vaccination visit vital signs	vvsdiabppo	VS	VSORRES	Char	direct copy to character format
+vaccination visit vital signs	vvsdiabppo	VS	VSORRESU	Char	assigned, ="mmHg"
+vaccination visit vital signs	vvsdiabppo	VS	VSSTRESC	Char	direct copy to character format
+vaccination visit vital signs	vvsdiabppo	VS	VSSTRESN	Num	direct copy
+vaccination visit vital signs	vvsdiabppo	VS	VSSTRESU	Char	assigned, ="mmHg"
+Physical Exam	pevisdat	PE	PEDTC	Char	derived, Concatenated and Transformed into ISO8601 format
+Physical Exam	petim	PE	PEDTC	Char	
+Physical Exam	pend	PE	PESTAT	Char	derived, "NOT DONE" if pend=9
+Physical Exam	pereasnd	PE	PEREASND	Char	direct copy
+Physical Exam	pend	PE	PETESTCD	Char	PETESTCD=PEALL if pend=9
+Physical Exam	petestgen	PE	PETESTCD	Char	GENAPR
+Physical Exam	petestgen	PE	PETEST	Char	General Appearance
+Physical Exam	petestgen	PE	PEORRES	Char	derived, "NORMAL" if petestgen=0; Null if petestgen=91;
+Physical Exam	pedescgen	PE	PEORRES	Char	direct copy if petestgen=1;
+Physical Exam	pedescgen	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestgen	PE	PESTAT	Char	derived, "NOT DONE" if petestgen=91 at screening visit
+Physical Exam	petestextrem	PE	PETESTCD	Char	EXTREMI
+Physical Exam	petestextrem	PE	PETEST	Char	Extremities
+Physical Exam	petestextrem	PE	PEORRES	Char	derived, "NORMAL" if petestextrem=0; Null if petestextrem=91;
+Physical Exam	pedescextrem	PE	PEORRES	Char	direct copy if petestextrem=1;
+Physical Exam	pedescextrem	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestextrem	PE	PESTAT	Char	derived, "NOT DONE" if petestextrem=91 at screening visit
+Physical Exam	petestheent	PE	PETESTCD	Char	HEENT
+Physical Exam	petestheent	PE	PETEST	Char	HEENT
+Physical Exam	petestheent	PE	PEORRES	Char	derived, "NORMAL" if petestheent=0; Null if petestheent=91;
+Physical Exam	pedescheent	PE	PEORRES	Char	direct copy if petestheent=1;
+Physical Exam	pedescheent	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestheent	PE	PESTAT	Char	derived, "NOT DONE" if petestgen=91 at screening visit
+Physical Exam	petestlymph	PE	PETESTCD	Char	LYMNODE
+Physical Exam	petestlymph	PE	PETEST	Char	Lymph nodes
+Physical Exam	petestlymph	PE	PEORRES	Char	derived, "NORMAL" if petestlymph=0; Null if petestlymph=91;
+Physical Exam	pedesclymph	PE	PEORRES	Char	direct copy if petestlymph=1; 
+Physical Exam	pedesclymph	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestlymph	PE	PESTAT	Char	derived, "NOT DONE" if petestlymph=91 at screening visit
+Physical Exam	petestresp	PE	PETESTCD	Char	RESP
+Physical Exam	petestresp	PE	PETEST	Char	Respiratory
+Physical Exam	petestresp	PE	PEORRES	Char	derived, "NORMAL" if petestresp=0;   Null if petestresp=91;
+Physical Exam	pedescresp	PE	PEORRES	Char	direct copy if petestresp=1; 
+Physical Exam	pedescresp	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestresp	PE	PESTAT	Char	derived, "NOT DONE" if petestresp=91 at screening visit
+Physical Exam	petestcardio	PE	PETESTCD	Char	CARDIO
+Physical Exam	petestcardio	PE	PETEST	Char	Cardiovascular
+Physical Exam	petestcardio	PE	PEORRES	Char	derived, "NORMAL" if petestcardio=0; Null if petestcardio=91;
+Physical Exam	pedesccardio	PE	PEORRES	Char	direct copy if petestcardio=1;
+Physical Exam	pedesccardio	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestcardio	PE	PESTAT	Char	derived, "NOT DONE" if petestcardio=91 at screening visit
+Physical Exam	petestabdom	PE	PETESTCD	Char	ABDOM
+Physical Exam	petestabdom	PE	PETEST	Char	Abdominal
+Physical Exam	petestabdom	PE	PEORRES	Char	derived, "NORMAL" if petestabdom=0; Null if petestabdom=91;
+Physical Exam	pedescabdom	PE	PEORRES	Char	direct copy if petestabdom=1;
+Physical Exam	pedescabdom	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestabdom	PE	PESTAT	Char	derived, "NOT DONE" if petestabdom=91 at screening visit
+Physical Exam	petestskin	PE	PETESTCD	Char	SKIN
+Physical Exam	petestskin	PE	PETEST	Char	Skin
+Physical Exam	petestskin	PE	PEORRES	Char	derived, "NORMAL" if petestskin=0; Null if petestskin=91;
+Physical Exam	pedescskin	PE	PEORRES	Char	"""NORMAL"" if petestskin=0;
+directly copy pedescskin if petestskin=1;
+Null if petestskin=91;"
+Physical Exam	pedescskin	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestskin	PE	PESTAT	Char	derived, "NOT DONE" if petestskin=91 at screening visit
+Physical Exam	petestbreast	PE	PETESTCD	Char	BREAST
+Physical Exam	petestbreast	PE	PETEST	Char	Breast
+Physical Exam	petestbreast	PE	PEORRES	Char	derived, "NORMAL" if petestbreast=0; Null if petestbreast=91;
+Physical Exam	pedescbreast	PE	PEORRES	Char	direct copy if petestbreast=1;
+Physical Exam	pedescbreast	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestbreast	PE	PESTAT	Char	derived, "NOT DONE" if petestbreast=91 at screening visit
+Physical Exam	petestgenito	PE	PETESTCD	Char	GENITO
+Physical Exam	petestgenito	PE	PETEST	Char	Genitourinary
+Physical Exam	petestgenito	PE	PEORRES	Char	derived, "NORMAL" if petestgenito=0; Null if petestgenito=91;
+Physical Exam	pedescgenito	PE	PEORRES	Char	direct copy if petestgenito=1; 
+Physical Exam	pedescgenito	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestgenito	PE	PESTAT	Char	derived, "NOT DONE" if petestgenito=91 at screening visit
+Physical Exam	petestrectal	PE	PETESTCD	Char	RECTAL
+Physical Exam	petestrectal	PE	PETEST	Char	Rectal
+Physical Exam	petestrectal	PE	PEORRES	Char	derived, "NORMAL" if petestrectal=0; Null if petestrectal=91;
+Physical Exam	pedescrectal	PE	PEORRES	Char	direct copy if petestrectal=1;
+Physical Exam	pedescrectal	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestrectal	PE	PESTAT	Char	derived, "NOT DONE" if petestrectal=91 at screening visit
+Physical Exam	petestneuro	PE	PETESTCD	Char	NEURO
+Physical Exam	petestneuro	PE	PETEST	Char	Neurologic
+Physical Exam	petestneuro	PE	PEORRES	Char	derived, "NORMAL" if petestneuro=0; Null if petestneuro=91;
+Physical Exam	pedescneuro	PE	PEORRES	Char	direct copy if petestneuro=1;
+Physical Exam	pedescneuro	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestneuro	PE	PESTAT	Char	derived, "NOT DONE" if petestneuro=91 at screening visit
+Physical Exam	petestgastro	PE	PETESTCD	Char	GASTRO
+Physical Exam	petestgastro	PE	PETEST	Char	Gastrointestinal
+Physical Exam	petestgastro	PE	PEORRES	Char	derived, "NORMAL" if petestgastro=0; Null if petestgastro=91;
+Physical Exam	pedescgastro	PE	PEORRES	Char	direct copy if petestgastro=1;
+Physical Exam	pedescgastro	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestgastro	PE	PESTAT	Char	derived, "NOT DONE" if petestgastro=91 at screening visit
+Physical Exam	petestinjectsite	PE	PETESTCD	Char	INJSITE
+Physical Exam	petestinjectsite	PE	PETEST	Char	Injection Site Assessment
+Physical Exam	petestinjectsite	PE	PEORRES	Char	derived, "NORMAL" if petestinjectsite=0;   Null if petestinjectsite=91;
+Physical Exam	pedescinjectsite	PE	PEORRES	Char	direct copy if petestinjectsite=1;
+Physical Exam	pedescinjectsite	PE	PESTRESC	Char	direct copy from PEORRES
+Physical Exam	petestinjectsite	PE	PESTAT	Char	derived, "NOT DONE" if petestinjectsite=91 at screening visit
+Physical Exam	peoth1sp	PE	PETESTCD	Char	derived based on the specify content
+Physical Exam	peoth1sp	PE	PETEST	Char	derived based on the specify content
+Physical Exam	petestoth1	PE	PEORRES	Char	derived, "NORMAL" if petestoth1=0; Null if petestoth1=91;
+Physical Exam	pedescoth1	PE	PEORRES	Char	direct copy pedescoth1 if petestoth1=1;
+Physical Exam	peoth2sp	PE	PETESTCD	Char	derived based on the specify content
+Physical Exam	peoth2sp	PE	PETEST	Char	derived based on the specify content
+Physical Exam	petestoth2	PE	PEORRES	Char	derived, "NORMAL" if petestoth2=0; Null if petestoth2=91;
+Physical Exam	pedescoth2	PE	PEORRES	Char	direct copy pedescoth2 if petestoth2=1;
