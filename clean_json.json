@@ -1,0 +1,5730 @@
+[
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aespid",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESPID",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeterm",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AETERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aepimmc",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AECAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived AECAT=\"PIMMC\" when AEPIMMC=1"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aepir",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEPRESP",
+		"data_type": "Char",
+		"mapping_instruction": "derived AEPRESP=\"Y\" when AEPIR=1; AEPRESP=\"N\" when AEPIR=0"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesev",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AETOXGR",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value. \n1=\"MILD\"\n2=\"MODERATE\"\n3=\"SEVERE\"\n4=\"POTENTIALLY LIFE THREATENING\"\n5=\"FATAL\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeser",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESER",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value. \n0=\"N\"\n1=\"Y\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aedis",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEACN",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 1=\"DRUG WITHDRAWN\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aerel",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEREL",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value. \n0=\"NOT RELATED\"\n1=\"UNLIKELY\"\n2=\"POSSIBLE\"\n3=\"PROBABLY\"\n4=\"DEFINITELY\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeout",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEOUT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \n1=\"RECOVERED/RESOLVED\"\n2=\"RECOVERED/RESOLVED WITH SEQUELAE\"\n3,6=\"RECOVERING/RESOLVING\" or \"NOT RECOVERED/NOT RESOLVED\"\n4,5=\"FATAL\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESDTH",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 1=\"Y\"; 2,3,4,5=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESLIFE",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 2=\"Y\"; 1,3,4,5=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESHOSP",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 4=\"Y\"; 1,2,3,5=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESDISAB",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 3=\"Y\"; 1,2,4,5=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESCONG",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 5=\"Y\"; 1,2,3,4=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aemed",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AECONTRT",
+		"data_type": "Char",
+		"mapping_instruction": "AECONTRT=AEMED with formatted value\n0=\"N\", 1=\"Y\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aestdat",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeendat",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEENDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeongo",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEENRF",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 1=\"ONGOING\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aemaae, aerel",
+		"sdtm_domain": "SUPPAE",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "If MAAE=Yes, QNAM=\"MAAE\"; If relationship to study vaccine=Not related or Unlikely, QNAM=\"ALTETIO\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aemaae",
+		"sdtm_domain": "SUPPAE",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"Type of MAAE visit\" when QNAM=\"MAAE\" and QLABEL=\"If Not Related, Alternate Etiology\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aemaaevisit",
+		"sdtm_domain": "SUPPAE",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "For MAAE, map the formatted value of aemaaevisit"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aemaaevisitsp",
+		"sdtm_domain": "SUPPAE",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "For MAAE, directly copy aemaaevisitsp"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeetiology",
+		"sdtm_domain": "SUPPAE",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "For ALTETIO, directly copy the value of aeetiology"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesum",
+		"sdtm_domain": "CO",
+		"sdtm_variable": "COVAL",
+		"data_type": "Char",
+		"mapping_instruction": "COVAL=AESUM; The text of the comment. Text over 200 characters can be added to additional columns COVAL1-COVALn"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aevisdat",
+		"sdtm_domain": "CO",
+		"sdtm_variable": "CODTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesum",
+		"sdtm_domain": "co",
+		"sdtm_variable": "COVAL",
+		"data_type": "Char",
+		"mapping_instruction": "COVAL=AESUM; The text of the comment. Text over 200 characters can be added to additional columns COVALICOVALn"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aevisdat",
+		"sdtm_domain": "co",
+		"sdtm_variable": "CODTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into IS08601 format"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmaeno",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMAENO",
+		"data_type": "Char",
+		"mapping_instruction": "Direct copy"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmspid",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMSPID",
+		"data_type": "Char",
+		"mapping_instruction": "Direct copy"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmtrt",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMTRT",
+		"data_type": "Char",
+		"mapping_instruction": "Direct copy"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmindc",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMINDC",
+		"data_type": "Char",
+		"mapping_instruction": "Direct copy"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmdose",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMDOSE",
+		"data_type": "Char",
+		"mapping_instruction": "Direct copy"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmdosu",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMDOSEU",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value:\n1=\"mg\"\n2=\"ug\"\n3=\"g\"\n4=\"IU\"\n5=\"mL\"\n6=\"mg/kg\"\n7=\"mg/m2\"\n8=\"Tbsp\"\n9=\"Tsp\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmdosuoth",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMDOSEU",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the other specify field: 99=cmdosuoth"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmdosfrq",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMDOSFRQ",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value:\n1=\"QD\"\n2=\"BID\"\n3=\"TID\"\n4=\"QID\"\n5=\"PRN\"\n6=\"ONCE\"\n7=\"1 TIME PER WEEK\"\n8=\"QOD\"\n9=\"ONCE IMMEDIATELY\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmdosfrqoth",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMDOSFRQ",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the other specify field: 99=cmdosfrqoth"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmroute",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMROUTE",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value:\n1=\"ORAL\"\n2=\"INTRAMUSCULAR\"\n3=\"INTRAVENOUS\"\n4=\"NASAL\"\n5=\"TOPICAL\"\n6=\"RECTAL\"\n7=\"RESPIRATORY (INHALATION)\"\n8=\"SUBCUTANEOUS\"\n9=\"OPHTHALMIC\"\n10=\"AURICULAR (OTIC)\"\n11=\"SUBLINGUAL\"\n12=\"PARENTERAL\"\n97=\"UNKNOWN\"\n98=\"N/A\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmrouteoth",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMROUTE",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the other specify field: 99=cmrouteoth"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmstdat",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmendat",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMENDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmongo",
+		"sdtm_domain": "CM",
+		"sdtm_variable": "CMENRF",
+		"data_type": "Char",
+		"mapping_instruction": "derived: 1=\"Ongoing\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmcomnt",
+		"sdtm_domain": "CO",
+		"sdtm_variable": "COVAL",
+		"data_type": "Char",
+		"mapping_instruction": "COVAL=cmcomnt; The text of the comment. Text over 200 characters can be added to additional columns COVAL1-COVALn"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "cmvisdat",
+		"sdtm_domain": "CO",
+		"sdtm_variable": "CODTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC1",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC1\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC1",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 1 Description\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC1",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC1"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC1CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC1CD\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC1CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 1 Description Code\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC1CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC1CD"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC2",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC2\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC2",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 2 Description\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC2",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC2"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC2CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC2CD\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC2CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 2 Description Code\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC2CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC2CD"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC3",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC3\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC3",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 3 Description\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC3",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC3"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC3CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC3CD\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC3CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 3 Description Code\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC3CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC3CD"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC4",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC4\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC4",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 4 Description\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC4",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC4"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC4CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC4CD\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC4CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 4 Description Code\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC4CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC4CD"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC5",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC5\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC5",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 5 Description\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC5",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC5"
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC5CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "QNAM=\"CMATC5CD\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC5CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "QLABEL=\"ATC Level 5 Description Code\""
+	},
+	{
+		"crf": "Concomitant Medication",
+		"original_variable": "CMATC5CD",
+		"sdtm_domain": "SUPPCM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy QVAL=CMATC5CD"
+	},
+	{
+		"crf": "Informed Consent",
+		"original_variable": "codat",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "RFICDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icvisdat",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icage",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "1"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icage",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC01"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icage",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC01. Healthy adults between ages 18-55 years"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icage",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N (Note: only the inclusion criteria which was not met will be mapped to this domain)"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichivrisk",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "2"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichivrisk",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC02"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichivrisk",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC02. At low risk for HIV infection"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichivrisk",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icinfcon",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "3"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icinfcon",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC03"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icinfcon",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC03. Able and willing to provide written, informed consent"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icinfcon",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccomply",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "4"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccomply",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC04"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccomply",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC04. Able and willing to comply with all research requirements"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccomply",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icblooddon",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "5"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icblooddon",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC05 or IC05A after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icblooddon",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC05. Agreement to refrain from blood donation during the course of the study  OR\nIC05. Agreement to refrain from blood donation during the course of the study and within the 2 months prior to study entry after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icblooddon",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icweight",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "6"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icweight",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC06"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icweight",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC06. Minimum body weight of 110 pounds (lbs) (50kg)"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icweight",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichgb",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "7a"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichgb",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC07A or IC07AA after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichgb",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC07A. Hemoglobin >=12.0 g/dL for women; >=12.5 g/dL for men within 30 days before enrollment  OR\nIC07A. Hemoglobin >=11.7 g/dL for women; >=12.5 g/dL for men within 45 days before enrollment after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichgb",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icwbc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "7b"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icwbc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC07B or IC07BA after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icwbc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC07B. WBC Count =3,500-10,800 cells/mm^3 within 30 days before enrollment  OR\nIC07B. WBC Count =3,500-10,800 cells/mm^3 within 45 days before enrollment after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icwbc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icplt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "7c"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icplt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC07C or IC07CA after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icplt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC07C. Platelets >=140,000/mm^3 and <=450,000/mm^3 within 30 days before enrollment  OR\nIC07C. Platelets >=140,000/mm^3 and <=450,000/mm^3 within 45 days before enrollment after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icplt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icalt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "7d"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icalt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC07D or IC07DA after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icalt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC07D. Alanine aminotransferase (ALT; SGPT) < 1.25 x ULN within 30 days before enrollment  OR\nIC07D. Alanine aminotransferase (ALT; SGPT) < 1.25 x ULN within 45 days before enrollment after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icalt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccreatin",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "7e"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccreatin",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC07E or IC07EA after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccreatin",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC07E. Serum creatinine <=1.25x institutional upper limit of the reference range within 30 days before enrollment  OR\nIC07E. Serum creatinine <=1.25x institutional upper limit of the reference range within 45 days before enrollment after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccreatin",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icneghiv",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "7f"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icneghiv",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC07F or IC07FA after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icneghiv",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC07F. Negative HIV testing (HIV Ab/antigen 4th generation screen with reflex confirmatory RNA testing) within 30 days before enrollment  OR\nIC07F. Negative HIV testing (HIV Ab/antigen 4th generation screen with reflex confirmatory RNA testing) within 45 days before enrollment after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icneghiv",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichbsaghepc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "7g"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichbsaghepc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC07G or IC07GA after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichbsaghepc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC07G. Negative HBsAg and hepatitis C antibody testing within 30 days before enrollment  OR\nIC07G. Negative HBsAg and hepatitis C antibody testing within 45 days before enrollment after 11/14/2022"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ichbsaghepc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icpostmenop",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "8a"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icpostmenop",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC08A"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icpostmenop",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC08A. No reproductive potential due to post-menopausal status or hysterectomy, bilateral oophorectomy, or tubal ligation"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icpostmenop",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccontracep",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "8b"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccontracep",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC08B"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccontracep",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC08B. People of childbearing potential should agree to practice highly effective contraception at least 30 days before enrollment and through 3 months post last vaccination"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "iccontracep",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icsafesex",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "8c"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icsafesex",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC08C"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icsafesex",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC08C. All participants are encouraged to engage in safe sex practices to prevent HIV acquisition"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icsafesex",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icnegbhcg",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "9"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icnegbhcg",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC09"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icnegbhcg",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC09. Participants assigned female at birth, a negative urine pregnancy test on the day of enrollment and each vaccination day is required"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icnegbhcg",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ictravel",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "10"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ictravel",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC10"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ictravel",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC10. No plans to travel outside the Washington DC metro area that would prevent compliance with planned study visits"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ictravel",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ictou",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "11"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ictou",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC11"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ictou",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC11. Test of Understanding (minimum passing score of 80% with 2 attempts permitted)"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "ictou",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icdesctxt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "12"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icdesctxt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "IC11"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icdesctxt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "IC11. Test of Understanding (minimum passing score of 80% with 2 attempts permitted)"
+	},
+	{
+		"crf": "Inclusion Criteria",
+		"original_variable": "icdesctxt",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "N"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecvisdat",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "echivvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "1"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "echivvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC01"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "echivvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC01. Receipt of any investigational HIV vaccine or investigational adjuvant"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "echivvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y (Note: only the exclusion criteria which was not met will be mapped to this domain)"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecinvestvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "2"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecinvestvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC02"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecinvestvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC02. Received an investigational product or vaccine in the 30 days before enrollment"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecinvestvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecanotherstudy",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "3"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecanotherstudy",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC03"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecanotherstudy",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC03. Concurrent participation in another clinical research study"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecanotherstudy",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecmedcond",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "4"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecmedcond",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC04"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecmedcond",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC04. Any serious medical illness or condition"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecmedcond",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunoglob",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "5"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunoglob",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC05"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunoglob",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC05. Receipt of immunoglobulins or blood products within 3 months before enrollment"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunoglob",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecanaphylaxis",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "6"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecanaphylaxis",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC06"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecanaphylaxis",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC06. Any history of anaphylaxis or allergy to study product"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecanaphylaxis",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsicklecell",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "7"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsicklecell",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC07"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsicklecell",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC07. History of sickle cell trait or disease"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsicklecell",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "eclactation",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "8"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "eclactation",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC08"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "eclactation",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC08. Pregnancy, lactation, or intention to become pregnant during the study"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "eclactation",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "eccancer",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "9"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "eccancer",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC09"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "eccancer",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC09. History of active/recent cancer still within treatment or active surveillance follow-up"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "eccancer",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecautoimmune",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "10"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecautoimmune",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC10"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecautoimmune",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC10. History of autoimmune disease"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecautoimmune",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecpimmc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "11"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecpimmc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC11"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecpimmc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC11. History of Potentially Immune-Mediated Medical Conditions"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecpimmc",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecalcoholdrug",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "12"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecalcoholdrug",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC12"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecalcoholdrug",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC12. Suspected or known current alcohol or drug abuse as defined by an alcohol intake of greater than 3 drinks a day on average for a man, and greater than 2 drinks a day on average for a woman"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecalcoholdrug",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsigdisease",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "13"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsigdisease",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC13"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsigdisease",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC13. Any other significant disease, disorder or finding which may significantly increase the risk to the volunteer because of participation in the study"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsigdisease",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsplenectomy",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "14"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsplenectomy",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC14"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsplenectomy",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC14. History of splenectomy"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsplenectomy",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunodef",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "15"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunodef",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC15"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunodef",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC15. History of confirmed or suspected immunodeficiency"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunodef",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecangioedema",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "16"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecangioedema",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC16"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecangioedema",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC16. History of hereditary angioedema (HAE) acquired angioedema (AAE), or idiopathic forms of angioedema"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecangioedema",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecasthma",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "17"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecasthma",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC17"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecasthma",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC17. History of asthma that is unstable or required emergent care, urgent care, hospitalization, or intubation during the past 2 years"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecasthma",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecdiabetes",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "18"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecdiabetes",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC18"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecdiabetes",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC18. History of diabetes mellitus (type I or II), with the exception of gestational diabetes"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecdiabetes",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecthyroid",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "19"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecthyroid",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC19"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecthyroid",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC19. History of thyroid disease (except for well controlled hypothyroidism)"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecthyroid",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecurticaria",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "20"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecurticaria",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC20"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecurticaria",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC20. History of idiopathic urticaria within the past year"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecurticaria",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "echypertension",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "21"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "echypertension",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC21"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "echypertension",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC21. History of hypertension that is not well controlled by medication or that is persistently greater than 140/95 at screening"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "echypertension",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecbleeding",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "22"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecbleeding",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC22"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecbleeding",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC22. History of bleeding disorder diagnosed by a doctor or significant bruising or bleeding difficulties with IM injections or blood draws"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecbleeding",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecneurodisease",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "23"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecneurodisease",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC23"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecneurodisease",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC23. History of chronic or active neurologic disease to include seizure disorder and chronic migraine headaches"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecneurodisease",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunosup",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "24a"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunosup",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC24A"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunosup",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC24A. Participants receiving Systemic immunosuppressive medications or cytotoxic medications within 12 weeks before enrollment"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunosup",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunomod",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "24b"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunomod",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC24B"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunomod",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC24B. Participants receiving Treatment with known immunomodulators including allergy immunotherapy (other than NSAIDs) for any reason"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecimmunomod",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecattenuatedvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "24c"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecattenuatedvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC24C"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecattenuatedvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC24C. Participants receiving Live attenuated vaccines within 30 days before initial study vaccine administration"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecattenuatedvax",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsubunit",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "24d"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsubunit",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC24D"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsubunit",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "EC24D. Participants receiving Medically indicated subunit, mRNA, or killed vaccines or allergy treatment with antigen injections, planned for 14 days before or after study vaccine administration"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecsubunit",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecarthritis",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "25"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecarthritis",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC25"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecarthritis",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "E25. History of arthritis diagnosis other than osteoarthritis"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecarthritis",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecrheumatoid",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "26"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecrheumatoid",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC26"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecrheumatoid",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "E26. History of other diagnosed rheumatoid disorders"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecrheumatoid",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecillnessfever",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IESPID",
+		"data_type": "Char",
+		"mapping_instruction": "27"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecillnessfever",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EC27"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecillnessfever",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETEST",
+		"data_type": "Char",
+		"mapping_instruction": "E27. Has an acute illness or temperature >=38.0 C/100.4 F on any study injection day or within 48 hours of planned study injection"
+	},
+	{
+		"crf": "Exclusion Criteria",
+		"original_variable": "ecillnessfever",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Enrollment",
+		"original_variable": "iecat",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IECAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived with formatted value: 1=Inclusion Criteria 2=Exclusion Criteria"
+	},
+	{
+		"crf": "Enrollment",
+		"original_variable": "ietestcd",
+		"sdtm_domain": "IE",
+		"sdtm_variable": "IETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "need to separate each criteria, refer to IC_EC sheet for the code"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "dmdat",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "DMDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "gender",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "GENIDENT"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "gender",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCTEST",
+		"data_type": "Char",
+		"mapping_instruction": "Gender Identity"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "gender",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, copy the formatted value \n0=\"Male\"\n1=\"Female\"\n2=\"Transgender\"\n3=\"Non-binary\""
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "gender",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "SCSTRESC=SCORRES"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "sex",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "SEX",
+		"data_type": "Char",
+		"mapping_instruction": "derived, directly copy the formatted value \n0='Male', \n1='Female', \n2='Undifferentiated'"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "age",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "AGE",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "age",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "AGEU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, AGEU=YEARS"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "ethnic",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "ETHNIC",
+		"data_type": "Char",
+		"mapping_instruction": "derived, directly copy the formatted value \n0='Non-Hispanic/Latino'\n1='Hispanic/Latino'"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "RACE",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \n1='WHITE'\n2='BLACK OR AFRICAN AMERICAN'\n3='ASIAN'\n4='AMERICAN INDIAN OR ALASKA NATIVE'\n5='MULTIPLE'\n6='NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER'\n99='OTHER'"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race5",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "RACE5 (Note: only map when it's Yes)"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race5",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "MULTIPLE RACE"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race5",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "WHITE"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race3",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "RACE3 (Note: only map when it's Yes)"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race3",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "MULTIPLE RACE"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race3",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "BLACK OR AFRICAN AMERICAN"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race2",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "RACE2 (Note: only map when it's Yes)"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race2",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "MULTIPLE RACE"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race2",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "ASIAN"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race1",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "RACE1 (Note: only map when it's Yes)"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race1",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "MULTIPLE RACE"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race1",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "AMERICAN INDIAN OR ALASKA NATIVE"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race4",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "RACE4 (Note: only map when it's Yes)"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race4",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "MULTIPLE RACE"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "race4",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "raceoth",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QNAM",
+		"data_type": "Char",
+		"mapping_instruction": "RACEOTH"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "raceoth",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QLABEL",
+		"data_type": "Char",
+		"mapping_instruction": "OTHER RACE"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "raceoth",
+		"sdtm_domain": "SUPPDM",
+		"sdtm_variable": "QVAL",
+		"data_type": "Char",
+		"mapping_instruction": "QVAL=upcase(RACEOTH)"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "edlevel_scorres",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EDULEVEL"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "edlevel_scorres",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCTEST",
+		"data_type": "Char",
+		"mapping_instruction": "Level of Education Attained"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "edlevel_scorres",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, formatted value:\n1=\"Primary education\"\n2=\"Secondary education\"\n3=\"Undergraduate Degree\"\n4=\"Graduate Degree\""
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "edlevel_scorres",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "SCSTRESC=SCORRES"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "eduoth",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "occup",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EMPJOB"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "occup",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCTEST",
+		"data_type": "Char",
+		"mapping_instruction": "Employee Job"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "occup",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, formatted value:\n1=\"Business\"\n2=\"Construction/Trade\"\n3=\"Education\"\n4=\"Food/retail\"\n5=\"Government\"\n6=\"Health\"\n7=\"Legal\"\n8=\"Science/Research\"\n9=\"Student\"\n10=\"Transportation\"\n11=\"Retired/Not working\""
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "occup",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "SCSTRESC=SCORRES"
+	},
+	{
+		"crf": "Demographics",
+		"original_variable": "occupsp",
+		"sdtm_domain": "SC",
+		"sdtm_variable": "SCORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Randomization",
+		"original_variable": "randgroup",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "ARMCD",
+		"data_type": "Char",
+		"mapping_instruction": "based on the randomization information, derived as ALFQ200, ALFQ100 or ALFQ50"
+	},
+	{
+		"crf": "Randomization",
+		"original_variable": "randgroup",
+		"sdtm_domain": "DM",
+		"sdtm_variable": "ARM",
+		"data_type": "Char",
+		"mapping_instruction": "based on the randomization information, derived as:\nVaccine A244/B.63521 + 200 ug ALFQ, \nVaccine A244/B.63521 + 100 ug ALFQ,\nVaccine A244/B.63521 + 50 ug ALFQ"
+	},
+	{
+		"crf": "Randomization",
+		"original_variable": "randdat",
+		"sdtm_domain": "DS",
+		"sdtm_variable": "DSDTC",
+		"data_type": "Char",
+		"mapping_instruction": "Concatenated date and time and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "mhdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHDTC/MHENTPT",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "mhyn",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"Not Done\" if mhyn=9 or Null"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "mhreasnd",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHREASND",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "General"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If gen_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "HEENT"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If heent_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Cardiovascular"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If cardio_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Respiratory"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If resp_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Gastrointestinal/Digestive"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If gastro_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Genitourinary"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If genito_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Musculoskeletal"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If ms_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Neurologic"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If neuro_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Endocrine"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If endo_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Psychiatric"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If psyc_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Hematologic/Lymphatic"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If hem_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Metabolic/Nutritional"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If metab_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Allergy/Drug Sensitivity"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If allergy_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhterm",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "manually review the term and code the category"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If oth1_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhterm",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "manually review the term and code the category"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If oth2_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhterm",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "manually review the term and code the category"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If oth3_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "mhdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHDTC/MHENTPT",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "mhyn",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"Not Done\" if mhyn=9 or Null"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "mhreasnd",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHREASND",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "General"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gen_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If gen_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "HEENT"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "heent_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If heent_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Cardiovascular"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "cardio_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If cardio_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Respiratory"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "resp_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If resp_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Gastrointestinal/Digestive"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "gastro_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If gastro_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Genitourinary"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "genito_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If genito_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Musculoskeletal"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "ms_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If ms_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Neurologic"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "neuro_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If neuro_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Endocrine"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "endo_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If endo_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Psychiatric"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "psyc_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If psyc_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Hematologic/Lymphatic"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "hem_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If hem_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Metabolic/Nutritional"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "metab_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If metab_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "Allergy/Drug Sensitivity"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "allergy_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If allergy_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhterm",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "manually review the term and code the category"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth1_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If oth1_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhterm",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "manually review the term and code the category"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth2_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If oth2_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhoccur",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHOCCUR",
+		"data_type": "Char",
+		"mapping_instruction": "Y"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhterm",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHCAT",
+		"data_type": "Char",
+		"mapping_instruction": "manually review the term and code the category"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhsig",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHTERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhstdat",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHSTDTC",
+		"data_type": "Char",
+		"mapping_instruction": "ISO 8601 datetime or interval"
+	},
+	{
+		"crf": "Medical History",
+		"original_variable": "oth3_mhrslv",
+		"sdtm_domain": "MH",
+		"sdtm_variable": "MHENRTPT",
+		"data_type": "Char",
+		"mapping_instruction": "If oth3_mhrslv=1, MHENRTPT=BEFORE; otherwise, MHENRTPT=ONGOING"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsvisdat",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSDTC",
+		"data_type": "Char",
+		"mapping_instruction": "derived, Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vstim",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSDTC",
+		"data_type": "Char",
+		"mapping_instruction": ""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsnd",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, Only map when value is 9=\"Not Done\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsreasnd",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSREASND",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsheight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"HEIGHT\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsheight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"HEIGHT\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsheight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsheight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"in\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsheight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsheight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsheight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"in\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsweight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"WEIGHT\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsweight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"WEIGHT\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsweight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsweight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"LB\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsweight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsweight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsweight",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"LB\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vstemp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"TEMP\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vstemp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"TEMPERATURE\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vstemp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vstempu",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to formatted value. 1=C, 2=F"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vstemp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vstemp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy if unit is F, derived value (vstemp*9/5+32)"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vstempu",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"F\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vssit",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSPOS",
+		"data_type": "Char",
+		"mapping_instruction": "POSITION=SITTING"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vspulse",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"PULSE\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vspulse",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"PULSE RATE\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vspulse",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vspulse",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"beats/min\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vspulse",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vspulse",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vspulse",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"beats/minute\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsresp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"RESP\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsresp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"RESPIRATORY RATE\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsresp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsresp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"breaths/min\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsresp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsresp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsresp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"breaths/minute\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vssysbp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"SYSBP\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vssysbp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"SYSTOLIC BLOOD PRESSURE\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vssysbp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vssysbp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vssysbp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vssysbp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vssysbp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsdiabp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"DIABP\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsdiabp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"DIASTOLIC BLOOD PRESSURE\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsdiabp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsdiabp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsdiabp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsdiabp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "non-vaccination visit vital signs",
+		"original_variable": "vsdiabp",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsvisdat",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSDTC",
+		"data_type": "Char",
+		"mapping_instruction": "derived, Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstimpr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSDTC",
+		"data_type": "Char",
+		"mapping_instruction": ""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsndpr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, Only map when value is 9=\"Not Done\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsreasndpr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSREASND",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"TEMP\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"TEMPERATURE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstempupr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to formatted value. 1=C, 2=F"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy if unit is F, derived value (vstemp*9/5+32)"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstempupr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"F\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssitpr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSPOS",
+		"data_type": "Char",
+		"mapping_instruction": "POSITION=SITTING"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"PULSE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"PULSE RATE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"beats/min\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"beats/minute\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"RESP\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"RESPIRATORY RATE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"breaths/min\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"breaths/minute\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"SYSBP\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"SYSTOLIC BLOOD PRESSURE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"DIABP\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"DIASTOLIC BLOOD PRESSURE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppr",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsvisdat",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSDTC",
+		"data_type": "Char",
+		"mapping_instruction": "derived, Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstimpo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSDTC",
+		"data_type": "Char",
+		"mapping_instruction": ""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsndpo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, Only map when value is 9=\"Not Done\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsreasndpo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSREASND",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"TEMP\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"TEMPERATURE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstempupo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to formatted value. 1=C, 2=F"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstemppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy if unit is F, derived value (vstemp*9/5+32)"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvstempupo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"F\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssitpo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSPOS",
+		"data_type": "Char",
+		"mapping_instruction": "POSITION=SITTING"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"PULSE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"PULSE RATE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"beats/min\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvspulsepo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"beats/minute\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"RESP\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"RESPIRATORY RATE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"breaths/min\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsresppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"breaths/minute\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"SYSBP\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"SYSTOLIC BLOOD PRESSURE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvssysbppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"DIABP\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSTEST",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, = \"DIASTOLIC BLOOD PRESSURE\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSORRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy to character format"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESN",
+		"data_type": "Num",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "vaccination visit vital signs",
+		"original_variable": "vvsdiabppo",
+		"sdtm_domain": "VS",
+		"sdtm_variable": "VSSTRESU",
+		"data_type": "Char",
+		"mapping_instruction": "assigned, =\"mmHg\""
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pevisdat",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEDTC",
+		"data_type": "Char",
+		"mapping_instruction": "derived, Concatenated and Transformed into ISO8601 format"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petim",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEDTC",
+		"data_type": "Char",
+		"mapping_instruction": ""
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pend",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if pend=9"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pereasnd",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEREASND",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pend",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "PETESTCD=PEALL if pend=9"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgen",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "GENAPR"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgen",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "General Appearance"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgen",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestgen=0; Null if petestgen=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescgen",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestgen=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescgen",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgen",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestgen=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestextrem",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "EXTREMI"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestextrem",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Extremities"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestextrem",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestextrem=0; Null if petestextrem=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescextrem",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestextrem=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescextrem",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestextrem",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestextrem=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestheent",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "HEENT"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestheent",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "HEENT"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestheent",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestheent=0; Null if petestheent=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescheent",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestheent=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescheent",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestheent",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestgen=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestlymph",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "LYMNODE"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestlymph",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Lymph nodes"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestlymph",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestlymph=0; Null if petestlymph=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedesclymph",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestlymph=1; "
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedesclymph",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestlymph",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestlymph=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestresp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "RESP"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestresp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Respiratory"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestresp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestresp=0;   Null if petestresp=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescresp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestresp=1; "
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescresp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestresp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestresp=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestcardio",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "CARDIO"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestcardio",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Cardiovascular"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestcardio",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestcardio=0; Null if petestcardio=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedesccardio",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestcardio=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedesccardio",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestcardio",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestcardio=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestabdom",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "ABDOM"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestabdom",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Abdominal"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestabdom",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestabdom=0; Null if petestabdom=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescabdom",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestabdom=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescabdom",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestabdom",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestabdom=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestskin",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "SKIN"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestskin",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Skin"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestskin",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestskin=0; Null if petestskin=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescskin",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "\"NORMAL\" if petestskin=0;\ndirectly copy pedescskin if petestskin=1;\nNull if petestskin=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescskin",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestskin",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestskin=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestbreast",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "BREAST"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestbreast",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Breast"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestbreast",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestbreast=0; Null if petestbreast=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescbreast",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestbreast=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescbreast",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestbreast",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestbreast=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgenito",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "GENITO"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgenito",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Genitourinary"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgenito",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestgenito=0; Null if petestgenito=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescgenito",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestgenito=1; "
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescgenito",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgenito",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestgenito=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestrectal",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "RECTAL"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestrectal",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Rectal"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestrectal",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestrectal=0; Null if petestrectal=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescrectal",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestrectal=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescrectal",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestrectal",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestrectal=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestneuro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "NEURO"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestneuro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Neurologic"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestneuro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestneuro=0; Null if petestneuro=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescneuro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestneuro=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescneuro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestneuro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestneuro=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgastro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "GASTRO"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgastro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Gastrointestinal"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgastro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestgastro=0; Null if petestgastro=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescgastro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestgastro=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescgastro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestgastro",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestgastro=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestinjectsite",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "INJSITE"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestinjectsite",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "Injection Site Assessment"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestinjectsite",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestinjectsite=0;   Null if petestinjectsite=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescinjectsite",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy if petestinjectsite=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescinjectsite",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTRESC",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy from PEORRES"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestinjectsite",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PESTAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NOT DONE\" if petestinjectsite=91 at screening visit"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "peoth1sp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "derived based on the specify content"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "peoth1sp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "derived based on the specify content"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestoth1",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestoth1=0; Null if petestoth1=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescoth1",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy pedescoth1 if petestoth1=1;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "peoth2sp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETESTCD",
+		"data_type": "Char",
+		"mapping_instruction": "derived based on the specify content"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "peoth2sp",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PETEST",
+		"data_type": "Char",
+		"mapping_instruction": "derived based on the specify content"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "petestoth2",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \"NORMAL\" if petestoth2=0; Null if petestoth2=91;"
+	},
+	{
+		"crf": "Physical Exam",
+		"original_variable": "pedescoth2",
+		"sdtm_domain": "PE",
+		"sdtm_variable": "PEORRES",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy pedescoth2 if petestoth2=1;"
+	}
+]
