@@ -1,0 +1,121 @@
+[
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aespid",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESPID",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeterm",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AETERM",
+		"data_type": "Char",
+		"mapping_instruction": "direct copy"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aepimmc",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AECAT",
+		"data_type": "Char",
+		"mapping_instruction": "derived AECAT=\"PIMMC\" when AEPIMMC=1"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aepir",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEPRESP",
+		"data_type": "Char",
+		"mapping_instruction": "derived AEPRESP=\"Y\" when AEPIR=1; AEPRESP=\"N\" when AEPIR=0"
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesev",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AETOXGR",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value. \n1=\"MILD\"\n2=\"MODERATE\"\n3=\"SEVERE\"\n4=\"POTENTIALLY LIFE THREATENING\"\n5=\"FATAL\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeser",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESER",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value. \n0=\"N\"\n1=\"Y\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aedis",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEACN",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 1=\"DRUG WITHDRAWN\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aerel",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEREL",
+		"data_type": "Char",
+		"mapping_instruction": "derived - copy the formatted value. \n0=\"NOT RELATED\"\n1=\"UNLIKELY\"\n2=\"POSSIBLE\"\n3=\"PROBABLY\"\n4=\"DEFINITELY\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aeout",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AEOUT",
+		"data_type": "Char",
+		"mapping_instruction": "derived, \n1=\"RECOVERED/RESOLVED\"\n2=\"RECOVERED/RESOLVED WITH SEQUELAE\"\n3,6=\"RECOVERING/RESOLVING\" or \"NOT RECOVERED/NOT RESOLVED\"\n4,5=\"FATAL\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESDTH",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 1=\"Y\"; 2,3,4,5=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESLIFE",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 2=\"Y\"; 1,3,4,5=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESHOSP",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 4=\"Y\"; 1,2,3,5=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESDISAB",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 3=\"Y\"; 1,2,4,5=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aesaecod",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AESCONG",
+		"data_type": "Char",
+		"mapping_instruction": "derived, 5=\"Y\"; 1,2,3,4=\"N\""
+	},
+	{
+		"crf": "Adverse Event",
+		"original_variable": "aemed",
+		"sdtm_domain": "AE",
+		"sdtm_variable": "AECONTRT",
+		"data_type": "Char",
+		"mapping_instruction": "AECONTRT=AEMED with formatted value\n0=\"N\", 1=\"Y\""
+	},]
